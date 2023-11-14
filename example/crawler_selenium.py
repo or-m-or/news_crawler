@@ -62,17 +62,15 @@ def search2():
     chrome_service = Service(chrome_driver)
     driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
-    nytimes_login(driver)
-
-
-
-
+    # nytimes_login(driver)
+    nytimes_test(driver)
 
 
 
 def random_delay(min_seconds, max_seconds):
     """ 무작위 지연 시간을 생성하는 함수 """
     time.sleep(random.uniform(min_seconds, max_seconds))
+
 
 def random_user_agent():
     """ 무작위 사용자 에이전트를 생성하는 함수 """
@@ -153,6 +151,25 @@ def naver_login(driver):
     # driver.find_element(By.XPATH, '//*[@id="log.login"]').click()
     # random_delay(3, 7)  # 로그인 후 대기
 
+def nytimes_test(driver):
+    driver.get('https://www.nytimes.com')
+    # 뉴스 기사 가져오기
+    driver.find_element(By.CSS_SELECTOR, '#site-content > div > div.smartphone.tablet.desktop > div > div.css-15pgmqz.e1ppw5w20 > div > div.css-1l10c03.e17qa79g0 > div > div > div > div:nth-child(1) > div.css-1lvvmm > div > div > div > div.css-1432v6n.e17qa79g0 > div > section:nth-child(1) > a > div > div > h3').click()
+    random_delay(3, 7)
+    time.sleep(2)
+
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    notices = soup.select('#live-feed-items > div:nth-child(1) > div > p:nth-child(5)')
+
+    for n in notices:
+        print(n.text.strip())
+
+
+    # driver.implicitly_wait(30)
+    time.sleep(5)
+    # # 여기서 봇 탐지 
+    driver.quit()
 
 
 if __name__=="__main__":
