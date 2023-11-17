@@ -1,3 +1,15 @@
+# IDE files
+.idea/
+.vscode/
+**/*.swp
+./__pycache__/
 
-# 가상환경 라이브리러 파일
-.venv/
+# Python related
+__pycache__/
+.env
+.venv
+util/
+venv/
+
+# Mac files
+.DS_Store

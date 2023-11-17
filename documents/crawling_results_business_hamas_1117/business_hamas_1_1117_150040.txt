@@ -1,6 +1,7 @@
 title: After Outcry, Writers Guild Tries to Explain Silence on Hamas Attack
+subtitle: testing...
 author: 
-date: Nov. 16, 2023, 2:15 a.m. ET5m ago
+date: Oct. 24, 2023
 content:
 Facing mounting pressure from more than 300 Hollywood screenwriters questioning why it had not publicly condemned the Hamas attack on Israel this month, the Writers Guild of America West sent a letter to its members on Tuesday that sought to explain its silence while also calling the attack “an abomination.”
 The letter, signed by the guild’s leadership and viewed by The New York Times, said the reason the union had not issued a statement after the attack on Oct. 7 was not “because we are paralyzed by factionalism or masking hateful views” but rather because “we are American labor leaders, aware of our limitations and humbled by the magnitude of this conflict.”
@@ -20,10 +21,10 @@ Mr. Gordon’s latest film, “Irena’s Vow” — about a young Polish-Catholi
 He will change his guild membership status to “financial core,” according to his letter. Under that designation, he will still receive the contract benefits earned by the guild but he will no longer be able to vote or attend any guild meetings. The designation is irreversible and viewed by the guild as an act of disloyalty. The W.G.A. maintains an online list of members who have chosen this status, with a reminder that “Fi-Core is forever.”
 Mr. Gordon called Tuesday’s letter from the guild “pusillanimous” and faulted it for not calling for a release of the hostages.
 “I don’t retract anything I said,” he added in an interview. “If one cannot condemn, clearly, and without reservation, what Hamas perpetrated, one’s moral compass is absent, not broken.”
-business
-opinion
-well
+technology
+world
+us
 arts
-arts
+technology
 arts
 

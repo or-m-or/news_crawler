@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
+
 
 
 CHROMEDRIVER_PATH = r'C:\Users\thheo\Documents\crawler_test\chromedriver.exe'
@@ -21,64 +21,64 @@ def random_delay(min_seconds, max_seconds):
 
 
 
-def save_to_text_file(scrapdata):
+def save_to_text_file(scrapdata, count):
     """" 크롤링 한 뉴스기사 .txt 파일로 저장 """
 
-    folder_name = "results"
+    # results 폴더 없으면 생성
+    documents_folder = os.path.expanduser("~/documents")
+    folder_name = os.path.join(documents_folder, "crawling_results")
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
 
-    current_time = datetime.now().strftime(r"%Y%m%d_%H%M%S")
-
-    # 기사의 제목을 가져와 ':' 또는 ';' 이전의 문자열로 잘라서 파일 이름으로 사용
-    # news_title = scrapdata.get('title', 'No title')
-    # if ':' in news_title:
-    #     file_name_part = news_title.split(':')[0]
-    # elif ';' in news_title:
-    #     file_name_part = news_title.split(';')[0]
-    # else:
-    #     file_name_part = news_title
-
-
-    # file_title = f"{file_name_part}_{current_time}.txt"
-    file_title = f"T_{current_time}.txt"
-
+    # 크롤링한 목록 초기화(뉴스 기사에서 값이 비어있다면 'No --'으로 초기화)
+    news_section = scrapdata.get('section')
+    news_query = scrapdata.get('query')
     news_title = scrapdata.get('title', 'No title')
+    news_subtitle = scrapdata.get('subtitle', 'No subtitle')
     news_author = scrapdata.get('author', 'No author')
     news_date = scrapdata.get('date', 'No date')
     news_content = scrapdata.get('content', 'No content')
 
+
+    # 저장할 파일의 이름 생성 (파일명:섹션_쿼리_순번.txt)
+    count += 1
+    current_time = datetime.now().strftime(r"%m%d_%H%M%S") # 날짜 생성
+    file_title = f"{news_section}_{news_query}_{count}_{current_time}.txt"
+
+    # 크롤링한 데이터 저장
     with open(os.path.join(folder_name, file_title), 'w', encoding='utf-8') as file:
         file.write(f"title: {news_title}\n")
+        file.write(f"subtitle: {news_subtitle}\n")
         file.write(f"author: {news_author}\n")
         file.write(f"date: {news_date}\n")
         file.write(f"content:\n{news_content}\n")
-
-
+    
+    
 
 # nytimes_login, business_crawler 안에서 chrome_driver() 호출하게 변경하기
 def chrome_driver():
     """ 크롬 드라이버 객체를 생성하는 함수 """
 
-    # # # 크롬 브라우저 디버거 모드로 구동
+    # # 크롬 브라우저 디버거 모드로 구동
     subprocess.Popen(
-    r'C:\Program Files\Google\Chrome\Application\chrome.exe ' 
-    r'--remote-debugging-port=9222 '
-    r'--user-data-dir="C:\chrometemp"'
+        r'C:\Program Files\Google\Chrome\Application\chrome.exe ' 
+        r'--remote-debugging-port=9222 '
+        r'--user-data-dir="C:\chrometemp"'
     ) 
     
     # Chrome options
     options = webdriver.ChromeOptions()
-    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" 
-    options.add_argument(f'user-agent={user_agent}')                      # User-Agent 설정
-    options.add_argument('headless')                                      # headless 모드로 실행
-    options.add_argument('--incognito')                                   # 크롬 시크릿 모드로 실행
-    options.add_argument('--disable-gpu')                                 # 크롬 시크릿 모드 실행 중 GPU 기반/보조 렌더링을 비활성화
-    options.add_argument("--disable-blink-features=AutomationControlled") # 자동화 감지 기능 비활성화
-    options.add_argument('--ignore-certificate-errors')                   # SSL 인증 에러 무시
-    options.add_argument('--no-sandbox')                                  # 크롬 샌드박스모드 비활성화
+    # user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" 
+    # options.add_argument(f'user-agent={user_agent}')                      # User-Agent 설정
+    # options.add_argument("--disable-blink-features=AutomationControlled") # 자동화 감지 기능 비활성화
+    # options.add_argument('--ignore-certificate-errors')                   # SSL 인증 에러 무시
+    # options.add_argument('--no-sandbox')                                  # 크롬 샌드박스모드 비활성화
+    # options.add_argument('headless')                                      # headless 모드로 실행
+    # options.add_argument('--incognito')                                   # 크롬 시크릿 모드로 실행
+    # options.add_argument('--disable-gpu')                                 # 크롬 시크릿 모드 실행 중 GPU 기반/보조 렌더링을 비활성화
     
-    options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")  # 크롬 디버거 모드로 구동 : 디버거 주소 설정 - 삭제 예정
+    
+    options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")  # 크롬 디버거 모드로 구동 : 디버거 주소 설정
 
 
     # 드라이버 경로 지정 및 크롬 드라이버 객체 생성
@@ -93,16 +93,18 @@ def chrome_driver():
 
     # http 표준 헤더 변경
     headers = {
-        'Accept'      : 'application/json',
-        'Accept-Encoding' : 'gzip, deflate, br',
-        'Accept-Language' : 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
-        'Content-Type': 'application/json',
-        'Origin'      : r'https://myaccount.nytimes.com',
+        # 'User-Agent'  : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+        # 'Accept-Encoding' : 'gzip, deflate, br',
+        # 'Accept'      : 'application/json',
+        # 'Origin'      : r'https://myaccount.nytimes.com',
+        'Accept-Language' : 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7', # 없으면 캡챠
+        'Content-Type': 'application/json', # 없으면 캡챠
+        # 시도 중
         'Referer'     : r'https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=vi&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Fsubscription%2Fonboarding-offer%3FcampaignId%3D7JFJX%26EXIT_URI%3Dhttps%253A%252F%252Fwww.nytimes.com%252F&asset=masthead',
-        'User-Agent'  : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
     }
-    driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": headers})
+    
 
+    driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": headers})
     return driver
     
 
@@ -168,7 +170,7 @@ def nytimes_newslist(driver, section, query, count):
 
     # 결과 출력
     print(f'{len(news_url_list)}개의 검색 결과를 수집하였습니다.')
-    print(news_url_list)
+    print("url list : \n",news_url_list)
     return news_url_list
 
 
@@ -177,7 +179,7 @@ def nytimes_getnews(driver, section, query, url):
     scrapData = {}
 
     try:
-        # url 접속하여 html 소스 가져오기
+    # url 접속하여 html 소스 가져오기
         driver.get(url)
         random_delay(1, 3)
         html = driver.page_source
@@ -198,36 +200,45 @@ def nytimes_getnews(driver, section, query, url):
                 text = text.replace('Advertisement', '')
             content += text + '\n'
 
-            # 첫 번째 섹션을 만났을 때 플래그 설정 및 더 이상 섹션 크롤링 중지 - 제대로 동작안함.
-            section_encountered = True
-            if 'section' in paragraph.get('class', []):
-                if section_encountered:
-                    section_encountered = False
-                else:
-                    break
+            # # 첫 번째 섹션을 만났을 때 플래그 설정 및 더 이상 섹션 크롤링 중지 - 제대로 동작안함.
+            # section_encountered = True
+            # if 'section' in paragraph.get('class', []):
+            #     if section_encountered:
+            #         section_encountered = False
+            #     else:
+            #         break
+
+        # 기사 소제목 가져오기
+        # subtitle = soup.select('article p')
+        # subtitle = subtitles[0].get_text()
+        # subtitle = subtitle.text.strip() if subtitle else "소제목 정보 없음"
+        subtitle = 'testing...'
 
         # 기사 작성자 가져오기
         author = soup.select_one('article span a')
-        author = author.text.strip() if author else "작성자 정보 없음"
+        author = author.text.strip() if author else "No author"
 
-        # 기사 작성 일자 가져오기
+        # 기사 작성 날짜 가져오기
         date = soup.select_one('article time')
-        date = date.text.strip() if date else "날짜 정보 없음"
+        date = date.text.strip() if date else "No date"
 
         # 결과 출력 또는 반환
         scrapData = {
-            'section': section,
-            'query': query, 
-            'title': title,
-            'author': author,
-            'date' : date,
-            'content': content,
+            'section' : section,
+            'query'   : query, 
+            'title'   : title,
+            'subtitle': subtitle,
+            'author'  : author,
+            'date'    : date,
+            'content' : content,
         }
 
         print("title : \n", title)
-        print("author : \n", author) 
-        print("date : \n",date)
-        print("content : \n", content)
+        print("sub title : \n", subtitle)
+        print("author : \n", author) # 안 나옴
+        print("date : \n",date) # 가끔 다른 값 나옴 수정 필
+        print("content : \n", content) # 밑에 쓸대없는 단어 추가 됨
+        # exit()
         return scrapData
     
     except Exception as e:
@@ -243,18 +254,20 @@ if __name__=="__main__":
 
     # 로그인에 성공했다면 크롤링 수행
     if login_status:      
-        scrapList = []
-        section = 'business'
-        query = 'hamas'
-        crawling_num = 3
-
-        news_url_list = nytimes_newslist(driver, section, query, crawling_num)
+        # scrapList = []
+        section = 'business'  # 섹션 입력
+        query = 'hamas'       # 쿼리 입력
+        crawling_count = 10      # 크롤링할 개수
+        
+        save_count = 0
+        news_url_list = nytimes_newslist(driver, section, query, crawling_count)
         for news_url in news_url_list:
             scrapdata = nytimes_getnews(driver, section, query, news_url)
-            scrapList.append(scrapdata)
-            save_to_text_file(scrapdata)
+            # scrapList.append(scrapdata)
+
+            save_to_text_file(scrapdata, save_count)
     else:
-        print("로그인 실패로 인해 크롤링을 수행하지 않습니다.")
+        print("로그인에 실패하였습니다.")
 
     driver.quit()
 
