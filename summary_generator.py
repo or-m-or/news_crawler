@@ -10,10 +10,12 @@ from llama_index import (
 )
 from llama_index.indices.document_summary import DocumentSummaryIndex
 from llama_index.llms import OpenAI
+from llama_index.indices.loading import load_index_from_storage
+from llama_index import StorageContext
 
 
-
-openai.api_key = os.environ["OPENAI_API_KEY"]
+# openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = "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"
 
 logging.basicConfig(stream=sys.stdout, level=logging.WARNING)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
@@ -23,18 +25,21 @@ nest_asyncio.apply()
 # (동일한 스레드 내에서 여러 이벤트 루프 중첩해여 사용)
 
 # load data
+news_titles = ["business_hamas_1"] # ,business_hamas_2, ...
 news_docs = []
-docs = SimpleDirectoryReader(
-    input_files=[r"sample\business_hamas_1_1117_150040.txt"]
-).load_data()
-news_docs.extend(docs)
+for news_title in news_titles:
+    docs = SimpleDirectoryReader(
+        input_files=[f"sample/{news_title}.txt"]
+    ).load_data()
+    docs[0].doc_id = news_title
+    news_docs.extend(docs)
 
 
 # LLM
 chatgpt = OpenAI(temperature=0, model="gpt-3.5-turbo")
 service_context = ServiceContext.from_defaults(llm=chatgpt, chunk_size=1024)
 
-# Index default mode
+# default mode of building the index
 response_synthesizer = get_response_synthesizer(
     response_mode="tree_summarize", use_async=True
 )
@@ -46,6 +51,20 @@ doc_summary_index = DocumentSummaryIndex.from_documents(
 )
 
 
+# business_hamas_1 에 대한 요약
+print(doc_summary_index.get_document_summary("business_hamas_1"))
+
+doc_summary_index.storage_context.persist("index")
+
+# rebuild storage context
+storage_context = StorageContext.from_defaults(persist_dir="index")
+doc_summary_index = load_index_from_storage(storage_context)
 
 
-
+# Perform Retrieval from Document Summary Index
+# High-level Querying
+query_engine = doc_summary_index.as_query_engine(
+    response_mode="tree_summarize", use_async=True
+)
+response = query_engine.query("say korean")
+print(response)
