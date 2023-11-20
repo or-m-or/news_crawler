@@ -2,7 +2,7 @@ config = {
     "llm_predictor": 
     {
         "model_name" : "gpt-3.5-turbo-0613",
-        "temperature": 0
+        "temperature": 0,
     },
 
     "embed_model": 
