@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 
 
-CHROMEDRIVER_PATH = r'C:\Users\thheo\Documents\crawler_test\chromedriver.exe'
+CHROMEDRIVER_PATH = r'C:\Users\thheo\Documents\news_crawler\chromedriver.exe'
 
 
 def random_delay(min_seconds, max_seconds):
@@ -20,12 +20,11 @@ def random_delay(min_seconds, max_seconds):
     time.sleep(random.uniform(min_seconds, max_seconds))
 
 
-
-def save_to_text_file(scrapdata, count):
+# 수정 필요 : 반복문 함수 안으로 이동
+def save_to_text_file(scrapdata):
     """" 크롤링 한 뉴스기사 .txt 파일로 저장 """
-
     # results 폴더 없으면 생성
-    documents_folder = os.path.expanduser("~/documents")
+    documents_folder = os.path.expanduser("~/documents/news_crawler/documents")
     folder_name = os.path.join(documents_folder, "crawling_results")
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
@@ -39,11 +38,9 @@ def save_to_text_file(scrapdata, count):
     news_date = scrapdata.get('date', 'No date')
     news_content = scrapdata.get('content', 'No content')
 
-
     # 저장할 파일의 이름 생성 (파일명:섹션_쿼리_순번.txt)
-    count += 1
     current_time = datetime.now().strftime(r"%m%d_%H%M%S") # 날짜 생성
-    file_title = f"{news_section}_{news_query}_{count}_{current_time}.txt"
+    file_title = f"{news_section}_{news_query}_{current_time}.txt"
 
     # 크롤링한 데이터 저장
     with open(os.path.join(folder_name, file_title), 'w', encoding='utf-8') as file:
@@ -99,7 +96,6 @@ def chrome_driver():
         # 'Origin'      : r'https://myaccount.nytimes.com',
         'Accept-Language' : 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7', # 없으면 캡챠
         'Content-Type': 'application/json', # 없으면 캡챠
-        # 시도 중
         'Referer'     : r'https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=vi&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Fsubscription%2Fonboarding-offer%3FcampaignId%3D7JFJX%26EXIT_URI%3Dhttps%253A%252F%252Fwww.nytimes.com%252F&asset=masthead',
     }
     
@@ -254,18 +250,21 @@ if __name__=="__main__":
 
     # 로그인에 성공했다면 크롤링 수행
     if login_status:      
-        # scrapList = []
         section = 'business'  # 섹션 입력
         query = 'hamas'       # 쿼리 입력
         crawling_count = 10      # 크롤링할 개수
         
-        save_count = 0
+        
+        # 임시 : 기사 하나만 긁어오려는 경우
+        # news_url = r"https://www.nytimes.com/2021/12/10/magazine/fall-of-kabul-afghanistan.html"
+        # scrap_best_long_news = nytimes_getnews(driver=driver, section=section, query=query, url=news_url)
+        # save_to_text_file(scrap_best_long_news, count=0)
+        
+        
         news_url_list = nytimes_newslist(driver, section, query, crawling_count)
         for news_url in news_url_list:
             scrapdata = nytimes_getnews(driver, section, query, news_url)
-            # scrapList.append(scrapdata)
-
-            save_to_text_file(scrapdata, save_count)
+            save_to_text_file(scrapdata)
     else:
         print("로그인에 실패하였습니다.")
 

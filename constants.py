@@ -1,12 +1,13 @@
-from llama_index.prompts.prompts import QuestionAnswerPrompt
+from llama_index import PromptTemplate
 
 
-SUMM_TRAN_TMPL = (
-    """
+SUMMARY_PROMPT_TMPL = (
+"""
 Context information is below.
 ---------------------
 {context_str}
 ---------------------
-Summarize and translate the contents of the context into Korean
+Given the context information and not prior knowledge,
 """
 )
+SUMMARY_PROMPT = PromptTemplate(SUMMARY_PROMPT_TMPL)
