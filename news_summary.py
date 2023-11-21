@@ -26,6 +26,7 @@ from constants import (
 
 
 # openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = "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"
 logging.basicConfig(stream=sys.stdout, level=logging.WARNING)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 nest_asyncio.apply()
@@ -122,11 +123,10 @@ def save_summarized_file(summarized_result):
 
 
 if __name__ == "__main__":
-    input_directory_path = r"C:\Users\thheo\Documents\news_crawler\sample"
+    input_directory_path = f"sample"
     news_docs = load_news_from_sample(input_directory_path) # return list
 
     service_context = initialize_doc_summary_index()
     generate_summarize(news_docs, service_context)
-
 
 
