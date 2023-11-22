@@ -18,7 +18,7 @@ if __name__ == "__main__":
         news_query = sys.argv[2]
 
         # 크롤링할 뉴스의 개수
-        # 0일 때 긁을 수 있는 모든 뉴스를 긁는다.
+        # news_count가 0일 때, 긁을 수 있는 모든 뉴스를 긁는다.
         news_count = sys.argv[3]
 
         # nytimes_crawler.crawling(news_section, news_query, news_count)
