@@ -1,0 +1,22 @@
+title: Why Is Apple Getting ‘Spatial’?
+subtitle: 
+author: Sarah Kessler
+date: June 23, 2023
+content:
+This month, Apple unveiled its first headset for what most people would call augmented reality, virtual reality or, if you prefer, mixed reality. But none of those words are uttered in the nine-minute video about the device on Apple’s website. 
+Let me explain →
+Instead, it refers to “spatial computing,” a “spatial operating system,” “spatial experiences” and “spatial audio.”
+There’s a reason Apple has eschewed the established terminology in favor of more obscure phrasing. 
+And it’s not because its device is doing something drastically different from headsets like Meta’s Quest Pro or Microsoft’s HoloLens, according to Marcus Collins, an advertising executive and the author of “For the Culture.” 
+When it comes to spatial computing, Collins said, “no one knows what that is — and that provides Apple the opportunity to define it.”
+Collins used an NFT as an example: If someone tells you about “a digitized receipt of membership,” he said, you might ask follow-up questions like: What is that? How does it work?
+But if someone says, “I’m launching an NFT,” you might refer to what you already know about nonfungible tokens and be more likely to say, “No thanks, I’m good.”
+It’s not the first time Apple has strategically renamed a category. Before the App Store, for instance, people didn’t talk about apps; they talked about “software programs.”
+Nor is it the only tech giant to employ the strategy. In 2013, Facebook used “graph search” to describe its version of, well, search. (It didn’t become widely accepted.)
+Jim Prosser, a communications consultant who has led teams at Twitter, SoFi and Google, said the intended audience for “spatial computing” might be investors and the news media more than consumers. 
+“They are pitching a product to people,” he said. “For tech press, industry analysts and investors, they’re pitching a concept.”
+V.R. and A.R. have some baggage, including decades of sci-fi connotations and products by other companies that have not sold well.
+So are we heading into the era of “spatial computing”? As with all new buzzwords, that’s not ultimately up to corporate marketing arms. It’s up to people who might use it.
+“We decide what is acceptable, what’s not acceptable,” Collins said. “That’s how culture works.”
+Shop Talk explores idioms of the business world. Want to nominate a word or term? Email us at shoptalk@nytimes.com.
+

@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
-
+import hashlib
 
 
 CHROMEDRIVER_PATH = r'C:\Users\thheo\Documents\news_crawler\chromedriver.exe'
@@ -29,7 +29,7 @@ def save_to_text_file(scrapdata):
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
 
-    # 크롤링한 목록 초기화(뉴스 기사에서 값이 비어있다면 'No --'으로 초기화)
+    # 크롤링한 목록 초기화
     news_section = scrapdata.get('section')
     news_query = scrapdata.get('query')
     news_title = scrapdata.get('title', 'No title')
@@ -38,19 +38,21 @@ def save_to_text_file(scrapdata):
     news_date = scrapdata.get('date', 'No date')
     news_content = scrapdata.get('content', 'No content')
 
+
     # 저장할 파일의 이름 생성 (파일명:섹션_쿼리_순번.txt)
     current_time = datetime.now().strftime(r"%m%d_%H%M%S") # 날짜 생성
     file_title = f"{news_section}_{news_query}_{current_time}.txt"
+    # hashed_file_name = hashlib.md5(file_title.encode()).hexdigest()
 
     # 크롤링한 데이터 저장
+    # with open(os.path.join(folder_name, f"{hashed_file_name}"), 'w', encoding='utf-8') as file:
     with open(os.path.join(folder_name, file_title), 'w', encoding='utf-8') as file:
         file.write(f"title: {news_title}\n")
         file.write(f"subtitle: {news_subtitle}\n")
         file.write(f"author: {news_author}\n")
         file.write(f"date: {news_date}\n")
         file.write(f"content:\n{news_content}\n")
-    
-    
+
 
 # nytimes_login, business_crawler 안에서 chrome_driver() 호출하게 변경하기
 def chrome_driver():
@@ -138,15 +140,25 @@ def nytimes_login(driver):
 
 # 섹션, 쿼리(키워드), 기사 개수를 입력받고, 기사 본문이 있는 링크를 원소로 가지는 리스트 반환 (일단 하나의 섹션만 선택한다 가정)
 def nytimes_newslist(driver, section, query, count):
-    driver.get(f'https://www.nytimes.com/search?dropmab=false&query={query}&sections={section}%7Cnyt%3A%2F%2Fsection%2F0415b2b0-513a-5e78-80da-21ab770cb753&sort=best')
-    random_delay(1, 3)
     articles = []
     news_url_list = []
+    count = int(count)
+
+    driver.get(f'https://www.nytimes.com/search?dropmab=false&query={query}&sections={section}%7Cnyt%3A%2F%2Fsection%2F0415b2b0-513a-5e78-80da-21ab770cb753&sort=best')
+    random_delay(1, 3)
+
+    
+    if count == 0:
+        count = float('inf')
 
     # 원하는 개수가 나올때 까지 more button 클릭
     while len(articles) < count: 
-        articles = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="search-bodega-result"]')
-        if(len(articles) >= count): break
+        # articles = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="search-bodega-result"]')
+        current_articles = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="search-bodega-result"]')
+        articles.extend(current_articles[len(articles):])
+
+        if count != float('inf') and len(articles) >= count:
+            break
         try:
             driver.find_element(By.CSS_SELECTOR, 'button[data-testid="search-show-more-button"]').click()
         except:
@@ -196,19 +208,11 @@ def nytimes_getnews(driver, section, query, url):
                 text = text.replace('Advertisement', '')
             content += text + '\n'
 
-            # # 첫 번째 섹션을 만났을 때 플래그 설정 및 더 이상 섹션 크롤링 중지 - 제대로 동작안함.
-            # section_encountered = True
-            # if 'section' in paragraph.get('class', []):
-            #     if section_encountered:
-            #         section_encountered = False
-            #     else:
-            #         break
-
         # 기사 소제목 가져오기
         # subtitle = soup.select('article p')
         # subtitle = subtitles[0].get_text()
         # subtitle = subtitle.text.strip() if subtitle else "소제목 정보 없음"
-        subtitle = 'testing...'
+        subtitle = ''
 
         # 기사 작성자 가져오기
         author = soup.select_one('article span a')
@@ -229,11 +233,11 @@ def nytimes_getnews(driver, section, query, url):
             'content' : content,
         }
 
-        print("title : \n", title)
-        print("sub title : \n", subtitle)
-        print("author : \n", author) # 안 나옴
-        print("date : \n",date) # 가끔 다른 값 나옴 수정 필
-        print("content : \n", content) # 밑에 쓸대없는 단어 추가 됨
+        # print("title : \n", title)
+        # print("sub title : \n", subtitle)
+        # print("author : \n", author) # 안 나옴
+        # print("date : \n",date) # 가끔 다른 값 나옴 수정 필
+        # print("content : \n", content) # 밑에 쓸대없는 단어 추가 됨
         # exit()
         return scrapData
     
@@ -242,32 +246,33 @@ def nytimes_getnews(driver, section, query, url):
         return {}
     
 
-
-
-if __name__=="__main__":
+def crawling(news_section, news_query, news_count):
+    start_time = time.time()
     driver = chrome_driver()
     login_status = nytimes_login(driver) # 로그인 상태 반환
 
     # 로그인에 성공했다면 크롤링 수행
-    if login_status:      
-        section = 'business'  # 섹션 입력
-        query = 'hamas'       # 쿼리 입력
-        crawling_count = 10      # 크롤링할 개수
-        
-        
-        # 임시 : 기사 하나만 긁어오려는 경우
-        # news_url = r"https://www.nytimes.com/2021/12/10/magazine/fall-of-kabul-afghanistan.html"
-        # scrap_best_long_news = nytimes_getnews(driver=driver, section=section, query=query, url=news_url)
-        # save_to_text_file(scrap_best_long_news, count=0)
-        
-        
-        news_url_list = nytimes_newslist(driver, section, query, crawling_count)
-        for news_url in news_url_list:
-            scrapdata = nytimes_getnews(driver, section, query, news_url)
+    if login_status:                      
+        news_url_list = nytimes_newslist(driver, news_section, news_query, news_count)
+        for index, news_url in enumerate(news_url_list):
+            scrapdata = nytimes_getnews(driver, news_section, news_query, news_url)
             save_to_text_file(scrapdata)
+            print(f'크롤링 수행 중 ...{index+1}/{len(news_url_list)}')
     else:
         print("로그인에 실패하였습니다.")
-
+    
     driver.quit()
+
+    end_time = time.time()  # 종료 시간 기록
+    total_time = end_time - start_time  # 총 실행 시간 계산
+    print(f"nytimes_crawler 실행 시간: {total_time}초")
+
+
+
+if __name__=="__main__":
+    news_section = 'Business'
+    news_query = 'r200'
+    news_count = '0'
+    crawling(news_section, news_query, news_count)
 
     
