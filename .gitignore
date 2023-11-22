@@ -1,15 +1,16 @@
 # IDE files
 .idea/
 .vscode/
-**/*.swp
-./__pycache__/
 
-# Python related
+# Python
+./__pycache__/
 __pycache__/
+
+# enviroment
 .env
 .venv
-util/
 venv/
+.venv/
 
 # Mac files
 .DS_Store

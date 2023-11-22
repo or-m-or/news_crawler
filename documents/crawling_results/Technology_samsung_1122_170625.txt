@@ -1,0 +1,266 @@
+title: Google Antitrust TrialGoogle Viewed Exclusive Search Deals as a ‘Weapon,’ Justice Department says
+subtitle: 
+author: David McCabe
+date: Published Sept. 12, 2023Updated Sept. 13, 2023
+content:
+ David McCabe and Cecilia Kang
+The Justice Department and 38 states and territories on Tuesday laid out how Google had systematically wielded its power in online search to cow competitors, as the internet giant fiercely parried back, in the opening of the most consequential trial over tech power in the modern internet era.
+In a packed courtroom at the E. Barrett Prettyman U.S. Courthouse in Washington, the Justice Department and states painted a picture of how Google had used its deep pockets and dominant position, paying $10 billion a year to Apple and others to be the default search provider on smartphones. Google viewed those agreements as a “powerful strategic weapon” to cut out rivals and entrench its search engine, the government said.
+“This feedback loop, this wheel, has been turning for more than 12 years,” said Kenneth Dintzer, the Justice Department’s lead courtroom lawyer. “And it always turns to Google’s advantage.”
+Google denied that it had illegally used agreements to exclude its search competitors and said it had simply provided a superior product, adding that people can easily switch which search engine they use. The company also said that internet search extends more broadly than its general search engine and pointed to the many ways that people now find information online, such as Amazon for shopping, TikTok for entertainment and Expedia for travel.“Users today have more search options and more ways to access information online than ever before,” said John E. Schmidtlein, the lawyer who opened for Google.
+The back-and-forth came in the federal government’s first monopoly trial since it tried to break up Microsoft more than two decades ago. This case — U.S. et al. v. Google — is set to have profound implications not only for the internet behemoth but for a generation of other large tech companies that have come to influence how people shop, communicate, entertain themselves and work.
+Over the next 10 weeks, the government and Google will present arguments and question dozens of witnesses, digging into how the company came to power and whether it broke the law to maintain and magnify its dominance. The final ruling, by Judge Amit P. Mehta of the U.S. District Court of the District of Columbia, could shift the balance of power in the tech industry, which is embroiled in a race over artificial intelligence that could transform and disrupt people’s lives.
+A government victory could set limits on Google and change its business practices, sending a humbling message to the other tech giants. If Google wins, it could act as a referendum on increasingly aggressive government regulators, raise questions about the efficacy of century-old antitrust laws and further embolden Silicon Valley.
+“It is a test of whether our current antitrust laws — the Sherman Act, written in 1890 — can adapt to markets that are susceptible to monopolization in the 21st century,” said Bill Baer, a former top antitrust official at the Justice Department, adding that Google was “indisputably powerful.”
+The case is part of a sweeping effort by the Biden administration and states to rein in the biggest tech companies. The Justice Department has filed a second lawsuit against Google over its advertising technology, which could go to trial as early as next year. The Federal Trade Commission is separately moving toward a trial in an antitrust lawsuit against Meta. Investigations remain open in efforts that could lead to antitrust lawsuits against Amazon and Apple.
+The Justice Department filed the case accusing Google of illegally maintaining its dominance in search in October 2020. Months later, a group of attorneys general from 35 states, Puerto Rico, Guam and the District of Columbia filed their own lawsuit arguing that Google had abused its monopoly over search. Judge Mehta is considering both lawsuits during the trial.
+The case centers on the agreements that Google reached with browser developers, smartphone manufacturers and wireless carriers to use Google as the default search engine on their products. Since the lawsuit was filed, more than five million documents and depositions of more than 150 witnesses have been submitted to the court. Last month, Judge Mehta narrowed the scope of the trial, while allowing the core claims of monopoly abuse in search to remain.
+The trial unfolded on Tuesday in Courtroom 10 at Washington’s federal courthouse, a complex minutes from Capitol Hill. It drew a large crowd, with some people standing in line to enter as early as 4:30 a.m. Officials from the Google rivals Yelp and Microsoft also attended, as did dozens of attorneys and staff from the Justice Department, states and Google after years of work on the case.
+Judge Mehta began the proceedings punctually. In the government’s opening statement, Mr. Dintzer focused on the search agreements Google had struck with Apple and others. He referenced internal company documents that described how Google would not share revenue with Apple without “default placement” on its devices and how it worked to ensure that Apple couldn’t redirect searches to its Siri assistant.
+“Your honor, this is a monopolist flexing,” Mr. Dintzer said.
+In blunt language, Mr. Dintzer also argued that Google had tried to hide documents from antitrust enforcers by including lawyers on conversations and marking them as subject to attorney-client privilege. He showed a message from Sundar Pichai, Google’s chief executive, asking for the chat history to be turned off in one conversation.
+“They turned history off, your honor, so they could rewrite it here in this courtroom,” Mr. Dintzer said.
+William Cavanaugh, a lawyer for the states, echoed Mr. Dintzer’s concerns about Google’s agreements to become the default search engines on smartphones. He added that Google had limited a product used to place ads on other search engines to hurt Microsoft, which makes the Bing search engine.
+In response, Mr. Schmidtlein, Google’s lawyer, argued that the company’s default agreements with browser makers don’t lock up the market the way that the Justice Department said. Browser makers such as Apple and Mozilla both promote other search engines, he said, and it was easy for users to switch their default search engine.
+Using a slide show, Mr. Schmidtlein demonstrated the number of taps or clicks required to change the default on popular smartphones. People who wished to switch their search engine but did not know how could search Google for instructions or watch a video tutorial on YouTube, which Google owns, he said.
+The government’s evidence was coming from “snippets and out-of-context” emails, he said.
+The lawyers also sparred over whether Google was as dominant as the government claimed. The Justice Department and the states said Google competes primarily with broad search engines that act as a single place to look for multiple types of information. But Mr. Schmidtlein said Google’s universe of competitors was wider, including online retailers like Amazon, food delivery apps like DoorDash and travel booking sites like Expedia.
+In the afternoon, the Justice Department called Hal Varian, Google’s chief economist, as its first witness to establish that the company had long been aware of its power in search and deliberately tried to sidestep antitrust scrutiny.
+In more than three hours of testimony, Mr. Varian was asked about views that he shared with other Google employees on the power of defaults, the threat of Microsoft’s entry into search and his awareness of language that could invite the attention of antitrust regulators. The Justice Department drew from Mr. Varian’s emails and memos from as far back as the early 2000s.
+Mr. Varian is scheduled to return to the witness stand on Wednesday.
+Nico Grant and Steve Lohr contributed reporting.
+ Nico Grant
+The Justice Department’s antitrust case against Google got underway on Tuesday with opening statements and the first witness, but it is only one of a litany of lawsuits filed by U.S. officials against the company, covering a range of issues from competition to privacy.
+Here are other government lawsuits Google is facing in the United States:
+Google will have to contend with a second trial to decide a lawsuit brought by the Justice Department and a coalition of states, this one claiming that the company “corrupted legitimate competition” in the advertising technology market. In January, the government asked the U.S. District Court for the Eastern District of Virginia to force Google to sell much of its ad technology products. Those include software for buying and selling ads, a marketplace to complete the transactions, and a service for showcasing the ads across the internet.
+The company faces another antitrust lawsuit from a group of states, led by Texas, that accuses it of abusing monopolies in digital advertising. Google has called the suit a “misleading attack” on its ad business.
+Texas is also suing Google in a privacy case, claiming that Google collected facial and voice recognition information from Texans without their explicit consent. The state has said that Google’s practices run afoul of a consumer protection law, and violators of the law could face fines of up to $25,000 per violation. José Castañeda, a Google spokesman, said that the Texas attorney general, Ken Paxton, “is once again mischaracterizing our products in another breathless lawsuit” and that the company “will set the record straight in court.”
+The State of Texas has filed another suit against Google that claims the company continued tracking Texas residents’ locations even after users disabled that feature.
+Another case brought by a coalition of states, led by Utah, alleges that Google’s business practices blocked competition in its Play app store. Google and the states said in a Tuesday night court filing that they had reached an “agreement in principle” to settle the case.
+Google has denied wrongdoing in all of the lawsuits.
+Over the past year, the company spent almost $400 million to settle a case with 40 state attorneys general who had found issue with the company’s location tracking of users, and it paid $85 million to settle a suit with the State of Arizona, which had said that Google deceptively obtained users’ location data to make billions in profits. Mr. Castañeda, the Google spokesman, said the cases were “based on outdated product policies that we changed years ago.”
+David McCabe and Cecilia Kang contributed reporting.
+
+ Cecilia Kang
+And day one of U.S. et al. v. Google has ended. Varian has been called back to testify on Tuesday along with another witness. We will be covering this trial closely for its duration.
+ Cecilia Kang
+Testimony on the first day of this trial is expected to end at around 5 p.m. to 5:30 p.m. This will be the schedule pretty much every weekday for the remainder of the 10-week trial, except for some holidays and half days on many Fridays.
+ Cecilia Kang
+Varian has been on the witness stand for more than two hours. The Justice Department using more internal Google emails to show that company officials thought scale was important for the success of search.
+ Cecilia Kang
+It’s clear the Justice Department and states will be digging very deep into the millions of pages of documents they demanded from Google. Schmidtlein, Google's lawyer, earlier said the Justice Department was using “snippets and out-of-context” emails and documents to build their case and that they were not presenting the full picture.
+
+ Cecilia Kang
+Varian has now been on the stand for about an hour and a half. The questions he is being asked have moved to Google’s internal definitions of the search market. One interesting line from the Justice Department focuses on emails where Varian asked Google employees to use the term “query share” instead of “market share” when talking about search because of antitrust concerns. Varian says antitrust was one concern but that he also thought “query share” was more precise.
+ Cecilia Kang
+And we are back. The room has thinned out only a bit this afternoon. Varian is back in the witness seat.
+ Cecilia Kang
+We are taking a short break. When we return, Varian will again testify.
+ Cecilia Kang
+The opening statements from both sides of the federal government’s antitrust case against Google on Tuesday were directed not at a jury, but at a judge.
+The case will be decided in what is known as a bench trial, which differs from a jury trial in key ways.
+Jury trials rely on local residents to decide a case. But in a bench trial, one person — in this case, Judge Amit P. Mehta of the U.S. District Court for the District of Columbia — will listen to arguments and ultimately issue an opinion.
+He will determine whether the internet giant abused its monopoly power, as the government asserts. Remedies, which could include orders to stop certain business practices and even divestitures, would be decided in a separate proceeding.
+Judge Mehta, who was appointed in 2014 by President Barack Obama, hasn’t tipped his hand on his views of the case in more than three years of pretrial hearing.
+Last month, he narrowed the lawsuit by the Justice Department and states while preserving the core argument that Google maintained its monopoly in search through deals with smartphone makers that cut out competitors.
+Judge Mehta, 52, received his law degree from the University of Virginia in 1997, a year before Larry Page and Sergey Brin founded Google.
+Almost every civil antitrust case pursued by the government goes to a bench trial. In the Justice Department’s monopolization case against Microsoft in the late 1990s, Judge Thomas Penfield Jackson eventually decided in 2000 that the company was a predatory monopoly and should be split in half. The case was eventually settled without Microsoft being broken up.
+There are advantages to a bench trial, said Phil Weiser, Colorado’s attorney general, who is leading litigation for 38 states and territories on the lawsuit. Mr. Mehta has had three years of education on the case in pretrial proceedings and has already listened to initial arguments and seen evidence presented by both sides.
+In contrast, a jury begins its education during the trial. In a case involving a complicated technology and market, the more time the better, Mr. Weiser said.
+“There’s a certain benefit you get from having been able to give the judge a lot of the background knowledge leading up to the trial,” he said.
+
+ Cecilia Kang
+Varian, the Google economist who is the Justice Department's first witness, is saying that in the company's early days, Google was one of several dominant search engines. He is also saying he can't remember reading parts of the documents that the Justice Department is submitting as evidence. The Justice Department presented one internal email from 2007 on the importance of Google being the home page search default on browsers, as a way to target rivals like Yahoo and Microsoft. Varian says the same strategy could be true for Yahoo and Microsoft. “They could use it to target a vulnerability to Google,” he says.
+ Cecilia Kang
+The Justice Department is now rolling out more exhibits of Varian’s early email discussions, memos and presentations where he comments on the value of making it harder to switch from Google to Microsoft’s search product. The Justice Department points to Varian’s discussion about the power of defaults in a 2007 email with a Google employee. In another internal memo about the threat of Microsoft in search, Varian warned, “We also have to be sensitive about antitrust concerns.”
+ Cecilia Kang
+The Justice Department is asking Varian about Google's early days to establish that the company has long intended to keep its dominance in search by blocking the ability of rivals to compete. The government is delving into details now in the trial. It is highlighting a memo written by Varian in 2003, where the economist discusses the threat of Microsoft’s entry into search.
+ David McCabe and Nico Grant
+A lawyer for Google laid out its defense against the government’s antitrust case on Tuesday, arguing in an opening statement that Google offers a superior product to its competitors even as it faces a highly competitive marketplace.
+“Users today have more search options and more ways to access information online than ever before,” the lawyer, John Schmidtlein, said.
+He said the Justice Department and the states and territories that have sued Google are trying to hinder Google and its ability to compete, “all in the hopes that forcing people to use inferior products in the short run will somehow be good for competition in the long run.”
+The case centers on actions Google has taken including deals it struck with phone makers like Apple and Samsung, as well as internet browsers like Mozilla, to be their products’ default search engine. 
+Mr. Schmidtlein, a partner at the law firm Williams & Connolly, focused much of his attention on rebutting the idea that Google was responsible for harming a particular competitor — Microsoft’s Bing.
+“This case is really all about Microsoft,” he said focusing attention on a Google rival that is itself one of the biggest and most powerful companies in the world, instead of smaller firms like DuckDuckGo. 
+“Microsoft has failed to invest, failed to innovate” relative to Google, he said, suggesting that Bing would not be better or more popular even if Google had not struck default search agreements.
+Those deals, he argued, do not lock up the market the way that the Justice Department says they do. Apple and Mozilla both promote other search engines, he said, and it is easy to switch the default — you can even search Google for instructions or watch a how-to video on YouTube, which Google owns, he noted.
+But he could not provide a firm answer when Judge Amit P. Mehta — the judge who will decided the case — asked how many people have actually switched their default search engine. Mr. Schmidtlein said that data was not available, and even if it was, it would not be reliable because one can switch back and forth so easily.
+Mr. Schmidtlein said preventing Google from doing search distribution deals should be “anathema” to American antitrust law, painting Google as the best search engine in a competitive tech landscape.
+And he said the company competes with a range of specialized services when people look for information, not just broad search engines like Bing, Yahoo and DuckDuckGo. He mentioned Wayfair, Walmart, Amazon and Overstock for shopping, TripAdvisor, Booking.com, Hotels.com and Expedia for travel, and Doordash, Grubhub, UberEats and Yelp for food delivery.
+
+ Cecilia Kang
+The Justice Department has called its first witness: Hal Varian, the chief economist of Google.
+ Steve Lohr
+Hal Varian is a former UC Berkeley economist who joined Google early on, seeing it as a Petri dish for internet-age economics. His manner is folksy, he speaks with a Midwestern twang, and he’s razor sharp. Varian is known as the architect of Google’s ad auction markets. The Wall Street Journal once called him the “Adam Smith of Googlenomics.” The Justice Department will grill him on Google’s default distribution strategy for its search engine.
+ Cecilia Kang
+And we are back in session. Judge Mehta just sat down and the Justice Department is presenting documents to the judge as exhibits that the government will use in the trial.
+ Steve Lohr
+The star of opening arguments? Judge Mehta. He spoke only briefly, asking a handful of distilling, clarifying questions. For example, the Google lawyer John Schmidtlein went on at length saying how easy it was to switch a default search setting. Judge Mehta interrupted to ask, well, how much switching is actually done?
+ Steve Lohr
+Schmidtlein could only point to what happened when Mozilla briefly made Microsoft’s Bing the default on the Firefox browser, and “droves” of users switched to Google. But he said there were no good overall statistics. Really? In a digital world where every click is tracked? The judge asked the right question there — and elsewhere — this morning.
+ Steve Lohr
+It’s a familiar legal argument: A dominant tech company that has abused its market power to bully industry partners, protect its monopoly and thwart competition.
+The Justice Department’s case against the internet search giant Google has unmistakable echoes with a landmark federal suit against Microsoft a quarter-century ago. As with Microsoft then, Google is accused of using its overwhelming market power to unfairly cut competitors off from potential customers.
+The lawsuit against Google points to the Microsoft case and that company’s tactics in the 1990s, when it was accused of trying to hobble competition in the early days of internet browsers. “Google deploys the same playbook,” the government declares, by illegally wielding its might in online search much as Microsoft did with its personal computer operating system, Windows.
+Back then, if you wanted to get online, chances are you did it through a computer that ran Windows. About 90 percent of personal computers used Microsoft’s Windows software and Microsoft controlled the software and services that were featured on those Windows PC screens.
+But Microsoft was also invoked in a different way during opening statements on Tuesday.
+Google’s lead courtroom lawyer, John E. Schmidtlein, sought to focus the attention of the judge on Microsoft — another tech giant, instead of on Google’s smaller rivals in the search market, like DuckDuckGo.
+Mr. Schmidtlein said Microsoft’s Bing search engine trails Google in market share not because of improper tactics by Google, but because it is an inferior product.
+“Microsoft has failed to invest, failed to innovate” relative to Google, he said.
+And Bing, DuckDuckGo and Yahoo’s search engine aren’t the only competitors to Google, Mr. Schmidtlein argued. He name-checked Wayfair, Walmart, Amazon and Overstock for shopping, TripAdvisor, Booking.com, Hotels.com and Expedia for travel and Doordash, Grubhub, UberEats and Yelp for food delivery.
+Although the legal theory advanced against Google by the Justice Department mirrors the one used in the Microsoft case, that was a different era. When the Microsoft trial started, it was the high tide of early internet euphoria. E-commerce was just getting underway, and every industry wanted to jump on the digital bandwagon. The first Blackberry, essentially an email device, was introduced in 1999. The iPhone, which started the smartphone era, didn’t arrive until 2007.
+The Microsoft case ultimately ended in a settlement. The resulting consent decree prohibited the company from imposing restrictive contracts, freed PC makers to load and feature other companies’ software and forced Microsoft to disclose more technical information.
+The leading beneficiary of the more open environment was an internet search start-up called Google, with new technology and later a new business model. It was founded in September 1998, one month before the Microsoft trial began.
+
+ David McCabe
+After everyone gets something to eat, we expect the Justice Department will call its first witness.
+ David McCabe
+And with that, we head to a lunch break.
+ David McCabe
+Schmidtlein wraps up Google’s opening statement. “Plaintiffs’ claims seek to distort search competition by hindering Google and its ability to compete,” he says. “All in the hopes that forcing people to use inferior products in the short run will somehow be good for competition in the long run.”
+ David McCabe
+Both sides have referred to their expert witnesses. These are economists and other academics who are paid to do empirical evidence backing up their legal cases. In big antitrust cases, some economists charge hourly rates comparable to some lawyers.
+
+ Nico Grant
+Judge Mehta asked if people might use Google earlier in the search journey, before going to those sites, such as if he was looking for a dress shirt. Schmidtlein responded, “Then you go to Nordstrom…or Amazon.” For years, though, Google has been actively trying to get consumers looking for all kinds of goods and services to start their shopping journeys on Google Shopping.
+ David McCabe
+Schmidtlein, Google's lawyer, says that the company competes with a range of specialized services when people look for information, not just broad search engines like Bing, Yahoo and DuckDuckGo. He has namechecked Wayfair, Walmart, Amazon and Overstock for shopping, TripAdvisor, Booking.com, Hotels.com and Expedia for travel and Doordash, Grubhub, UberEats and Yelp for food delivery.
+ Nico Grant
+Schmidtlein is essentially getting at the idea that Bing would not be better or more popular even if Google did not have default search agreements with several browsers. 
+ Nico Grant
+Schmidtlein said Microsoft's Bing is unpopular for “many reasons” that Google would get into in the trial, but scale isn’t one of the issues. “Microsoft has failed to invest, failed to innovate” relative to Google, he said.
+
+ David McCabe
+Schmidtlein, Google's lawyer, says that “this case is really all about Microsoft.” It is not surprising that he is focusing the judge’s attention on Microsoft, Google's rival that is itself one of the biggest and most powerful companies in the world, instead of smaller firms like DuckDuckGo.
+ Nico Grant
+Schmidtlein says preventing Google from doing search distribution deals should be “anathema” to American antitrust law, painting Google as the best search engine in a competitive tech landscape. The issue at play is really whether a company that already has Google’s dominance should be allowed to do these types of deals.
+ David McCabe
+At the onset of an antitrust trial that challenges Google’s search dominance, Justice Department lawyer Kenneth Dintzer said in his opening statement that “Google illegally maintained a monopoly for more than a decade.”
+Mr. Dintzer immediately cut to the heart of his case: the agreements in which Google pays to be the default search provider on smartphones. He said those agreements — which he said cost Google more than $10 billion a year — are part of a powerful cycle that entrenches Google’s dominance.
+“This feedback loop, this wheel, has been turning for more than 12 years,” he said. “And it always turns to Google’s advantage.”
+The proceedings could reveal new information about an opaque agreement that Google had with Apple, which is believed to be worth billions of dollars and is central to the case. Mr. Dintzer said that Google viewed the potential loss of its position as the default search engine on Apple devices as a “code red situation.”
+The government is arguing that Google competes primarily with one-stop-shopping search engines like Microsoft’s Bing, while Google argues that it also competes with services like Amazon, TikTok and ChatGPT when people search for information online. That distinction will be hugely important as Judge Amit P. Mehta decides whether or not Google has a monopoly over search.
+Mr. Dintzer said that the Justice Department case was “built on documents that capture exactly” what Google did. In one example, he showed the court a 2007 presentation in which a Google engineer wrote that obtaining default-search positions could be a “powerful strategic weapon” for the company’s search business and an “Achilles' heel” for rivals like Yahoo and MSN.
+The opening statement offered clues to how the Justice Department will paint the relationship between Google and Apple. Mr. Dintzer said that Google was insistent that it would not share revenue with Apple without “default placement” on its devices. Later, Mr. Dintzer said, Google worked to make sure that Apple couldn’t redirect searches to its Siri assistant product.
+“Your honor, this is a monopolist flexing,” he said.
+Mr. Dintzer also argued that Google tried to hide documents from antitrust enforcers by including lawyers on conversations about these default agreements and marking them as subject to attorney-client privilege.
+He also noted that Google’s internal chat system deletes messages after 24 hours. He showed a message from Sundar Pichai, Google’s chief executive, asking for chat history to be turned off in one conversation.
+“They turned history off, your honor, so they could rewrite it here in this courtroom,” Mr. Dintzer said.
+
+ Nico Grant
+Schmidtlein does not have a good answer when Judge Mehta asks how many people actually switch their default search engine. He says that data is not available, and even if it was, it would not be reliable because you can switch back and forth so easily.
+ David McCabe
+One thing we’re hearing from John Schmidtlein, Google’s lawyer, is that some of the company's policies at the heart of the case increase competition. Here’s one example: He says that the agreements to preload Google apps on Android smartphones help create a counterbalance to Apple’s iOS operating system.
+ Cecilia Kang
+John E. Schmidtlein, who fought against Microsoft in antitrust cases two decades ago, is Google’s lead lawyer in the courtroom and the lawyer giving the company’s opening statement.
+In 2002, Mr. Schmidtlein represented states that sued Microsoft for using its dominance in Windows software to block rival media players. But Mr. Schmidtlein, who received his law degree from Georgetown University, also has a long track record working for tech companies.
+This year, the 57-year-old co-chair of antitrust at Williams & Connolly helped Amazon defeat an antitrust lawsuit that consumers brought against its logistics practices.
+Google’s litigation team also includes Susan Creighton, a partner at Wilson Sonsini Goodrich & Rosati who represented Netscape in the government’s 1998 antitrust suit against Microsoft, and Mark Popofsky, a partner at Ropes & Gray who was a senior counsel to the Justice Department in that suit against Microsoft.
+
+ David McCabe
+Schmidtlein notes that if you want to change the default search engine on your Apple device, you can search Google for instructions or watch a how-to video on YouTube, which Google owns.
+ David McCabe
+Schmidtlein is arguing that Google’s default agreements with browser makers don’t lock up the market the way that the Justice Department says they do. Apple and Mozilla both promote other search engines, he says, and it is easy to switch the default.
+ David McCabe
+Schmidtlein is focusing a lot of attention on rebutting the idea that Google is responsible for harming Microsoft’s Bing search engine. “At every critical juncture, the evidence will show, they were beaten in the market,” he says.
+ David McCabe
+Schmidtlein, Google's lawyer, says that the government has painted an inaccurate picture of the company’s position in the marketplace. “Users today have more search options and more ways to access information online than ever before,” he says.
+
+ Nico Grant
+While Google spending $10 billion on distribution deals for its search engine sounds like — and is — a lot of money, it’s significantly less than many financial analysts had long estimated. Some had estimated Apple alone was raking in at least $20 billion a year from Google.
+ David McCabe
+Now we’re hearing Google’s opening statement from John Schmidtlein, a partner at the law firm Williams & Connolly. He introduces a number of Google executives who are in attendance, including Kent Walker, the president of global affairs.
+ David McCabe
+We are back in session.
+ David McCabe
+William Cavanaugh has wrapped up the opening statement for the states. Now we’re taking a break, resuming in about 15 minutes. It's Google's turn next.
+
+ Nico Grant
+Google has for years been the most visited website on the internet, but why it has stayed that way for so long is a matter of dispute. That is one of the key points being argued in the antitrust trial underway in a federal court in Washington.
+The company says it owes its success to a superior product, and argues that it has won consumers over through relentless innovation.
+But the Justice Department claims that Google used search distribution deals with phone makers and web browser companies to rig the market, effectively deciding for consumers which search engine to use.
+Google pays these companies so users are directed to its search engine when they type a query into an address bar. A Justice Department lawyer, Kenneth Dintzer, said in his opening statement that Google pays more than $10 billion a year for search default placement, which he called an “enormous cost to the public” in terms of lost innovation in search and higher costs to advertisers.
+The tech giant has default search deals with these major web browsers:
+Apple Safari. On iPhones, iPads and Mac computers, Apple’s Safari browser comes standard with Google search. A $20 billion contract with Apple was up for renewal this year.
+Samsung Internet. Samsung’s proprietary web browser gets less attention than Google’s web browser, Chrome, which is also preloaded on Samsung mobile devices. But the browser has been downloaded more than a billion times, and Google gives Samsung an estimated $3 billion annually as part of a search distribution deal.
+Mozilla Firefox. Firefox is the world’s fifth-most-popular browser, according to data from the analysis firm Similarweb. Its maker, Mozilla, has long relied on Google for the vast majority of its revenue. The company’s current deal with Google has been estimated to exceed $400 million a year.
+Similarweb ranks the most popular web browsers as Chrome, Safari, Microsoft Edge, Samsung Internet and Firefox. Google is the default search engine on four of the five, as well as Opera, which has 2 percent of the desktop browser market.
+Microsoft’s search service, Bing, comes standard on Edge and also powers Yahoo and AOL.
+ Steve Lohr
+One figure to note — and which may keep coming up in this case — is $10 billion. Justice Department lawyer Dintzer said Google pays more than $10 billion a year for search default placement by Apple and others. He said that amounts to an “enormous cost to the public,” in terms of lost innovation in search and higher costs to advertisers.
+ David McCabe
+Google has a product that lets advertisers run campaigns on multiple search engines. Cavanaugh is arguing that by withholding features in that product from Microsoft’s search ads service, Google hurt its rival.
+
+ David McCabe
+Some of the slides have been redacted in the presentation that Cavanaugh is delivering. It's a reminder that some of the evidence and the testimony in the case will likely be sealed from public view when it touches on confidential information.
+ Steve Lohr
+In casual conversation, monopoly is often used as a pejorative, suggesting bad behavior. But not so in American antitrust law.
+There’s nothing necessarily wrong with a company becoming a monopoly. Big companies can be more efficient and invest more in research to deliver superior products at lower prices. But the real legal issue is how a monopoly business uses its market power.
+The government’s case against Google is that it has wielded its monopoly to bribe and bully, thwarting rivals and undermining competition. Google says its contracts with companies like Apple and Samsung to distribute its search engine are legal and benefit consumers.
+To win its lawsuit, the government must do two things.
+First, it must show that Google possesses a monopoly in search. The company’s 90 percent share of the search market in the United States certainly qualifies as a monopoly, by legal standards.
+Second, the government must prove that Google is abusing its market power, locking up essential distribution channels with billions of dollars in payments and restrictive contracts. Google argues that industry partners and consumers choose its search engine because it is the best product. And its deals with industry partners result in lower prices for smartphones and other devices for consumers.
+ David McCabe
+We are hearing an opening statement from William Cavanaugh, a partner at the law firm Patterson Belknap Webb & Tyler, who is one of the lawyers making the states’ case. Like many antitrust lawyers in private practice, he used to work at the Justice Department.
+
+ David McCabe
+Now we will hear opening statements from a group of states and territories that also sued Google in 2020, arguing that the company had abused its monopoly power over search. Their lawsuit is being considered alongside the Justice Department’s, though Judge Mehta threw out some of their arguments last month.
+ Cecilia Kang
+Kenneth Dintzer, a deputy director in the civil division of the Justice Department, is leading the government’s case in the courtroom and giving the federal government’s opening statement.
+Mr. Dintzer, 59, is a 30-year veteran of the Justice Department and a graduate of the University of Michigan law school.
+He was assigned to the Google case during the Trump administration and has argued in pretrial hearings that Google destroyed instant messages, “depriving” the department “of a rich source of candid discussions between Google’s executives, including likely trial witnesses.”
+He has worked on antitrust cases in the past, including the Justice Department’s lawsuit to block AT&T’s proposed merger with T-Mobile in 2011. The companies eventually dropped the deal.
+ David McCabe and Cecilia Kang
+U.S. et al. v. Google cuts to the heart of a long-simmering question: Did today’s tech giants become dominant by breaking the law?
+The case is the United States’ first monopoly trial of the modern internet era, as a generation of tech companies has come to wield immense influence over commerce, information, public discourse, entertainment and labor.
+Any ruling from the trial — which might not come until next year — could have broad ripple effects, slowing down the largest internet companies after decades of unbridled growth have enmeshed companies like Google, Apple, Amazon and Meta, which owns Facebook and Instagram, deeply into people’s lives.
+But the stakes are particularly high for Google, which could be forced to change its business practices, potentially certain costs and restructure itself. That could translate to fewer users, deflated profits and perhaps even limits on how Google is able to innovate with new technologies like artificial intelligence.
+Rivals have long accused Google — which has amassed 90 percent of the search engine market in the United States and 91 percent globally, according to Similarweb — of brandishing its power in search to suppress competitors’ links to travel, restaurant reviews and maps, while giving greater prominence to its own content.
+The Justice Department sued in 2020, saying Google’s actions have harmed consumers and stifled competition. That case shifts the government’s antitrust strategy against big tech companies from challenging their merger-and-acquisition deals to more deeply examining the businesses that thrust them into power.
+Monopoly trials have the power to change the direction of entire industries. In 1984, under pressure from the Justice Department, AT&T split itself into seven regional telecom companies. The breakup transformed the telecommunications industry by making it more competitive at the dawn of the mobile phone era.
+But the effects of the last landmark antitrust case — the government’s battle with Microsoft in the early 2000s — were less clear cut.
+Some tech executives have argued that the settlement that resolved the case did little to increase competition. But others, and Microsoft employees, said the Justice Department’s actions made Microsoft more cautious, clearing the way for start-ups like Google to compete in the next era of computing.
+
+ David McCabe and Nico Grant
+A federal judge will start hearing claims Tuesday from the Justice Department and a group of states that Google abused its power as a monopoly over online search services. The trial is expected to take more than two months, after which the judge will decide whether Google acted illegally — and if so, what to do about it.
+Google’s massively successful search tool has turned it into a giant business spanning advertising, cloud computing and the online video powerhouse YouTube. A ruling against it could limit the way Google can compete in the marketplace and reshuffle power in Silicon Valley.
+The case is also a test for governments that say tech giants like Google have too much influence over our online lives. The nation’s antitrust laws were first written more than a century ago, and this trial will show whether they can be used to rein in the fast-moving tech industry.
+The Justice Department says Google, which controls roughly 90 percent of the global search market, illegally used partnerships with other companies to shut out rivals.
+Thanks to agreements worth billions of dollars with companies like Apple, Samsung and Mozilla, Google has been the default search engine when billions of web users open a browser on their phones, tablets and personal computers. The government says that has prevented other search engines like Microsoft Bing and DuckDuckGo from accumulating a meaningful share of the market.
+The Justice Department also claims Google’s practice of preloading its services on devices that use its Android software illegally helped the internet company maintain a monopoly.
+Google says that its business practices are legal and commonplace, and that when it pays to appear on Apple’s Safari browser or Mozilla’s Firefox, the agreement is akin to a maker of cereals paying supermarkets to stock its boxes at eye level.
+It has also repeatedly argued that it has numerous successful competitors, including Amazon and TikTok, even though they do not operate general-purpose search engines.
+Consumers have a choice to use other search engines, Google argues, but choose it because they find it most helpful.
+The government must prove that Google’s commercial agreements meaningfully reduced competition. It will also have to explain how these business practices directly or indirectly harmed consumers — generally an important bar in antitrust cases.
+The government must also convince the judge to reject Google’s argument that e-commerce sites like Amazon and social media services like TikTok or Instagram are in the same market as Google’s search engine.
+If Judge Amit P. Mehta determines that Google violated the law, he will also consider ways to fix the situation.
+The Justice Department has not yet said what it would ask the court to do if it wins, but solutions available under antitrust law can include forcing Google to restructure.
+It could be tricky, however, to find a remedy that doesn’t force companies that are not being sued, including Apple and Samsung, to change their business practices.
+ David McCabe
+U.S. et al. v. Google is a case that has been more than four years in the making.
+Here’s a look at how the case has unfolded:
+July 2019: The Justice Department publicly confirmed that it was reviewing the power of the largest tech companies. It had split investigations into Google, Apple, Facebook and Amazon with the Federal Trade Commission.
+October 2020: The department sued Google. In its complaint, the Justice Department said the company had illegally cemented a monopoly in internet search by signing agreements with companies like Apple and Samsung to lock up crucial online real estate for its search service.
+December 2020: Attorneys general from 35 states, the District of Columbia, Guam and Puerto Rico filed their own antitrust lawsuit over Google’s search business. They included an argument that had not appeared in the Justice Department lawsuit: that Google had downplayed links from rival search services. The states will argue their case alongside the Justice Department at the trial that begins on Tuesday.
+December 2022: After years of legal wrangling over evidence in the case, Google asked the judge to rule on the lawsuits without a full trial. The Justice Department and states opposed the request.
+January 2023: The Justice Department’s antitrust division, now under the leadership of a longtime Google critic, Jonathan Kanter, filed a second lawsuit against Google. The lawsuit said Google had illegally dominated the market for technology that delivers ads across the web. That case is proceeding on a separate track and could go to trial next year.
+August 2023: In response to Google’s request for a ruling, Judge Amit P. Mehta of U.S. District Court for the District of Columbia threw out the states’ argument that Google had illegally played down rival search services like Yelp and Angie’s List. But he said the trial would go forward to consider the allegations that Google broke the law with the agreements it reached with Apple, Samsung and others.
+September 2023: Opening statements are set to begin in the trial, which is scheduled to last for 10 weeks.
+
+ Cecilia Kang and David McCabe
+The most consequential trial over tech power in the modern internet era began with government lawyers laying out in blunt and unstinting language their claim that Google had systematically wielded its power in online search to bully and cow competitors.
+The internet giant fiercely parried the charge, denying that it had used deals with companies like Apple, Samsung and Mozilla to exclude its search competitors, saying instead that Google simply provided a superior product.
+The governments bringing the case “seek to distort search competition by hindering Google and its ability to compete,” said John E. Schmidtlein, the lawyer who gave the opening statement for Google. “All in the hopes that forcing people to use inferior products in the short run will somehow be good for competition in the long run.”
+The case centers on tactics Google has employed while amassing roughly 90 percent of the global search engine market, enough that the company’s name has become synonymous with typing a query in a search box.
+A Justice Department lawyer opened the trial by laying out the government’s case that Google had used its deep pockets to strike deals that made it the default search provider on smartphones. Google viewed those agreements as a “powerful strategic weapon” to cut out rivals and entrench its search engine, the government said.
+“This feedback loop, this wheel, has been turning for more than 12 years,” the lawyer, Kenneth Dintzer, told the judge who will decide the case. “And it always turns to Google’s advantage.”
+Mr. Dintzer showed Judge Amit P. Mehta parts of an internal Google presentation that described the default search positions as an “Achilles heel” for rivals like Yahoo and MSN.
+Mr. Schmidtlein argued that Google’s default agreements with browser makers don’t lock up the market the way that the Justice Department says they do. Apple and Mozilla both promote other search engines, he said, and it is easy for users to switch their default search engine. Users who wish to switch, he added, can search Google for instructions or watch a video how-to on YouTube, which Google owns.
+The case, being heard in federal court in Washington, could have far-reaching implications not just for Google, but for the tech giants whose products are ever-present in daily life and the consumers who use them.
+Here’s what to know:
+There are two key elements of the case: Google’s default agreements and the search giant’s status as a monopoly. The Justice Department has put the value of the deals at more than $10 billion per year, with a range of partners. And while Google is a dominant force in internet search, being a monopoly isn’t necessarily a problem — the real legal issue is how a monopoly business uses its market power.
+The first witness called by the Justice Department was Hal Varian, the chief economist of Google, who was asked a line of questions intended to establish that the company had long been aware of its power in search and had deliberately tried to sidestep antitrust scrutiny. For more than three hours, Mr. Varian was questioned about views that he shared with other Google employees on the power of default search engines, the threat of Microsoft’s entry into search and his awareness of language that could draw the attention of antitrust regulators. The Justice Department drew from Mr. Varian’s emails and memos from as far back as the early 2000s.
+Lawyers for the Justice Department are expected to take more than three weeks to present their case, followed by two weeks for lawyers for the states and territories. Google is scheduled to begin its presentation in late October. The case will be decided by Judge Mehta, of U.S. District Court for the District of Columbia, rather than a jury, but a ruling may not come until next year.
+Should Google lose, it could be forced to change its business practices or restructure itself and demonstrate the government’s ability to rein in major tech companies. But a win for Google could raise questions about the regulatory powers once used to break apart corporate behemoths like Standard Oil and AT&T. Read about what’s at stake for Google and other big tech companies.
+Not since the Justice Department accused Microsoft of illegally crushing competition by bundling its Internet Explorer browser with its Windows software has the government gone after a major tech company in an antitrust case. The Microsoft case ended in 2001 with a settlement that some tech executives say opened the door for start-ups — including Google — to compete in the modern internet era. The cases are separated by two decades but have notable parallels.
+

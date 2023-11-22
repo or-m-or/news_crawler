@@ -1,0 +1,54 @@
+title: What the U.S.-China Chip War Means for a Critical American Ally
+subtitle: 
+author: John Liu
+date: Published Sept. 27, 2023Updated Oct. 1, 2023
+content:
+Samsung and SK Hynix, the semiconductor titans of South Korea, have spent over $52 billion to build up their operations in China. Business with China has long made up a sizable portion of their sales.
+But the ties between South Korea’s chip companies and China are under strain from geopolitics.
+South Korea, which relies heavily on its semiconductor sector for jobs and revenue, is wedged between China and the United States, South Korea’s longstanding ally, in their trade war over technology.
+To curb China’s access to advanced chips that could power its military, Washington has escalated steps to control the sale of such technologies. The Biden administration imposed restrictions last October, raising alarms in Seoul and setting off furious lobbying in Washington to try to minimize damage to South Korea’s semiconductor industry.
+A one-year waiver from the export rules that the companies received in mid-October is set to expire soon. While a new waiver is widely expected, uncertainty surrounds how long it might last.
+
+“Geopolitical issues have become the biggest risk for companies to manage,” South Korea’s president, Yoon Suk Yeol, said in June, speaking at a meeting of government officials and business executives about a national semiconductor strategy. “Companies cannot resolve this problem alone,” he said, calling the competition over chips an “all-out war.”
+Manufacturing semiconductors requires supply chains that cross national borders, and the efforts to impose new rules on the industry have tested commercial alliances in Asia, Europe and the United States. But few countries have wrestled with the potential economic disruption from trade restrictions as much as South Korea.
+Not only is China a big customer of chips made in South Korea, but both Samsung and SK Hynix have major production facilities in China.
+Semiconductors account for 20 percent of South Korea’s exports. Samsung and SK Hynix have long dominated the market for memory chips, which are used in smartphones and laptops to store data. Samsung sold 36 percent of all memory chips and SK Hynix 25 percent as of June, according to data calculated from TrendForce, a market research firm.
+
+Over the past decade, China has received more than half — at one point almost 67 percent — of South Korean chip exports. That number dropped to 55 percent last year, according to a calculation of South Korean government data by The New York Times.
+Samsung does not provide semiconductor sales numbers for China. Partly because of a drop in demand for chips and China’s economic slowdown, two of the company’s chip-related subsidiaries in China that disclosed their financial information showed a 35 percent fall in sales of chips and displays in the first half of this year.
+SK Hynix’s share of revenue from China peaked at nearly 47 percent in 2019. It shrank to 27 percent last year, still an important part of the company’s business.
+“To give up the large market that is China? We won’t be able to recover,” Chey Tae-won, SK Hynix’s chairman, said at a news conference in July.
+One of the most outspoken South Korean politicians on the issue is Yang Hyang-ja, a lawmaker in the National Assembly and a former Samsung executive. She called the country “a victim” in the trade dispute and proposed tax cuts to help chip makers. Her bill, the K-Chips Act, was passed in March.
+
+“We are taking a direct hit,” she said.
+Samsung uses its facilities in China to produce 40 percent of its NAND chips, one of two kinds of memory chips that help devices store data. SK Hynix produces 30 percent of its NAND chips in China and almost half of its DRAM chips, which enable short-term storage for personal computers and servers.
+The companies’ exposure to China is a challenge, said Avril Wu, a senior research vice president at TrendForce. “It’s not easy to withdraw, yet continuing to invest further is unwise, as nobody knows what might happen in the future,” she said.
+Samsung said in a statement that its investments were made to address the needs of global customers and other demands.
+Samsung and SK Hynix are not alone in facing uncertainty caused by the China-U.S. tensions. Taiwan Semiconductor Manufacturing Company, the world’s largest chip maker, is also waiting to hear from the U.S. Department of Commerce on the fate of its waivers to the export controls.
+
+The Commerce Department declined to comment but referred to a statement by Don Graves, deputy commerce secretary, who said during a trip to South Korea last week that the United States would “do everything” it could to ensure that companies could continue their businesses.
+For Samsung and SK Hynix, a waiver of a year or less could slow the companies’ development, experts said.
+Advances in chip making move swiftly, and companies must invest in equipment, parts and research to stay competitive. The bulky facilities that manufacture chips cost tens of millions to hundreds of millions of dollars.
+“Rather than wondering what will happen year by year, extending the waiver by two to three years at a time would make people more at ease,” said Lim Hyung-kyu, a retired Samsung executive who worked at the company for over three decades as an engineer and its chief technology officer.
+
+No matter the outcome of the waiver decision in Washington, the U.S. export controls and inclination to contain China’s tech supply chain could force Samsung and SK Hynix to change their business strategies in China.
+One possibility is that the companies could use their factories in China to serve customers in China, said Song Myung-sup, a semiconductor analyst at Hi Investment & Securities. They could also shift the focus of their production on less advanced products, he said, to avoid the U.S. restrictions.
+Already, the uncertainties surrounding the curbs, as well as a short-term slump in demand for chips, have stalled the construction of a SK Hynix plant in the Chinese city of Dalian, Mr. Song said. Neither SK Hynix nor Samsung has plans at the moment to invest more in China, he said.
+SK Hynix said that the construction of its Dalian factory was going as planned but that it had reduced its previously outlined capital spending this year.
+In turn, the South Korean government has said it will expand its domestic chip-making capacity over the long term by creating a semiconductor “mega-cluster” in Yongin, a 40-minute drive from a gigantic Samsung chip manufacturing campus. Samsung has said it will invest $228 billion over the next two decades.
+
+Separately, SK Hynix vowed last year to make an $11 billion investment in a plant in South Korea that it has started to build.
+The restrictions on business with China and promises of U.S. government incentives are also spurring more investment in the United States. Samsung said it would spend $17 billion on a facility in Taylor, Texas, while SK Hynix has pledged $15 billion for an American chip-packaging plant and a research center, and is in search of a location for the plant.
+For South Korea, there is the risk of economic retaliation from China for aligning itself too closely with the United States.
+South Korea waited almost a year before reluctantly joining an initiative proposed by President Biden last year to form a semiconductor “Chip 4” alliance with the United States, Japan and Taiwan.
+
+Ms. Yang, the South Korean lawmaker, said the U.S.-Chinese tech rivalry was destined to change the global supply chain for chip making. South Korea must accept that reality, she said.
+But she worries about the pressure it will put on South Korea, using a common idiom that described her country in relation to two superpowers. “The shrimp’s back may burst in a fight between whales,” she said.
+Ana Swanson contributed reporting from Washington.
+business
+technology
+opinion
+movies
+world
+arts
+

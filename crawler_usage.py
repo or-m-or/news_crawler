@@ -21,5 +21,6 @@ if __name__ == "__main__":
         # news_count가 0일 때, 긁을 수 있는 모든 뉴스를 긁는다.
         news_count = sys.argv[3]
 
-        # nytimes_crawler.crawling(news_section, news_query, news_count)
-        news_summary.news_summarizer()
+        scrapdata_list = nytimes_crawler.crawling(news_section, news_query, news_count)
+        news_summary.news_summarizer(scrapdata_list)
+        # news_summary.news_summarizer()

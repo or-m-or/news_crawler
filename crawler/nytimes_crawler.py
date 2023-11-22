@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 import hashlib
-
+from crawler.news_summary import news_summarizer
 
 CHROMEDRIVER_PATH = r'C:\Users\thheo\Documents\news_crawler\chromedriver.exe'
 
@@ -20,7 +20,6 @@ def random_delay(min_seconds, max_seconds):
     time.sleep(random.uniform(min_seconds, max_seconds))
 
 
-# 수정 필요 : 반복문 함수 안으로 이동
 def save_to_text_file(scrapdata):
     """" 크롤링 한 뉴스기사 .txt 파일로 저장 """
     # results 폴더 없으면 생성
@@ -75,8 +74,6 @@ def chrome_driver():
     # options.add_argument('headless')                                      # headless 모드로 실행
     # options.add_argument('--incognito')                                   # 크롬 시크릿 모드로 실행
     # options.add_argument('--disable-gpu')                                 # 크롬 시크릿 모드 실행 중 GPU 기반/보조 렌더링을 비활성화
-    
-    
     options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")  # 크롬 디버거 모드로 구동 : 디버거 주소 설정
 
 
@@ -115,8 +112,8 @@ def nytimes_login(driver):
     
     try:
         driver.get('https://www.nytimes.com/account')
-        random_delay(3,5)  # 로그인 되어 있지 않다면 위 링크로 접속 시 로그인 페이지로 리다이렉트 됨.
-        # exit()
+        random_delay(1, 3)  # 로그인 되어 있지 않다면 위 링크로 접속 시 로그인 페이지로 리다이렉트 됨.
+
         if driver.current_url == 'https://www.nytimes.com/account':
             print("이미 로그인되어 있습니다.")
             return True
@@ -128,7 +125,7 @@ def nytimes_login(driver):
 
             driver.find_element(By.NAME, 'password').send_keys(NYTIMES_PASSWORD)
             driver.find_element(By.XPATH, '//*[@id="myAccountAuth"]/div/div/form/div/div[2]/button').click()
-            random_delay(2, 3)
+            random_delay(1, 3)
             
             print(f"로그인 성공")
             return True
@@ -214,7 +211,7 @@ def nytimes_getnews(driver, section, query, url):
         # subtitle = subtitle.text.strip() if subtitle else "소제목 정보 없음"
         subtitle = ''
 
-        # 기사 작성자 가져오기
+        # 기사 작성자 가져오기, 못 가져오는 경우 있음.
         author = soup.select_one('article span a')
         author = author.text.strip() if author else "No author"
 
@@ -246,33 +243,35 @@ def nytimes_getnews(driver, section, query, url):
         return {}
     
 
+# 함수명 변경 필요 (패킹 전 병합 중)
 def crawling(news_section, news_query, news_count):
     start_time = time.time()
     driver = chrome_driver()
     login_status = nytimes_login(driver) # 로그인 상태 반환
 
+    scraplist = []
     # 로그인에 성공했다면 크롤링 수행
     if login_status:                      
         news_url_list = nytimes_newslist(driver, news_section, news_query, news_count)
         for index, news_url in enumerate(news_url_list):
-            scrapdata = nytimes_getnews(driver, news_section, news_query, news_url)
-            save_to_text_file(scrapdata)
             print(f'크롤링 수행 중 ...{index+1}/{len(news_url_list)}')
+            scrapdata = nytimes_getnews(driver, news_section, news_query, news_url) # dic
+            # save_to_text_file(scrapdata) # 크롤링한 파일을 별도로 저장하는 함수
+            scraplist.append(scrapdata) # 크롤링한 데이터 저장
     else:
         print("로그인에 실패하였습니다.")
-    
-    driver.quit()
 
+    driver.quit()
     end_time = time.time()  # 종료 시간 기록
     total_time = end_time - start_time  # 총 실행 시간 계산
     print(f"nytimes_crawler 실행 시간: {total_time}초")
+    return scraplist
 
 
-
-if __name__=="__main__":
-    news_section = 'Business'
-    news_query = 'r200'
-    news_count = '0'
-    crawling(news_section, news_query, news_count)
+# if __name__=="__main__":
+#     news_section = 'Business'
+#     news_query = 'r200'
+#     news_count = '0'
+#     crawling(news_section, news_query, news_count)
 
     
