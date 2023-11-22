@@ -221,12 +221,14 @@ def nytimes_getnews(driver, section, query, url):
 
         # 결과 출력 또는 반환
         scrapData = {
+            'doc_id'  : '',
             'section' : section,
             'query'   : query, 
             'title'   : title,
             'subtitle': subtitle,
             'author'  : author,
             'date'    : date,
+            'summary' : '',
             'content' : content,
         }
 

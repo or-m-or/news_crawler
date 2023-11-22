@@ -123,6 +123,16 @@ def generate_summeries(scraplist, config=config):
         # chunk_size_limit # 처리 가능한 최대 청크크기의 상한 선, chunk_size 보다 크거나 같아야 함.
     )
     response_synthesizer = TreeSummarize(verbose=True, summary_template=SUMMARY_PROMPT) 
+
+
+    for scrapdata in scraplist:
+        docs = SimpleDirectoryReader(scrapdata)
+        print(docs)
+
+        exit()
+
+
+
     index = DocumentSummaryIndex.from_documents(
         scraplist,
         service_context=service_context,
@@ -133,7 +143,7 @@ def generate_summeries(scraplist, config=config):
     for scrapdata in scraplist:
         scrapdata.doc_id = hash(scraplist[0].title)
         news_summary = index.get_document_summary(scrapdata.doc_id)
-        scrapdata.news_summary = news_summary
+        scrapdata.summary = news_summary
     
     return scraplist # 기존 scraplist + doc_id, news_summary
 
@@ -174,12 +184,12 @@ def news_summarizer(scraplist: list):
     start_time = time.time()
     input_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\crawling_results"
     output_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\summary_results"
+    
 
-
-    generate_summeries(scraplist)
-
+    news_docs = generate_summeries(scraplist) # list
+    print(news_docs)
         
-
+    exit()
     # news_docs = load_news(input_directory_path) # return list
     # index = initialize_index(news_docs)
     # save_summaries(news_docs, index, output_directory_path)

@@ -49,16 +49,20 @@ nest_asyncio.apply()
 
 
 # load data
-news_titles = ["business_hamas_1"] # ,business_hamas_2, ...
+news_titles = ["Technology_samsung_1122_170612", "Technology_samsung_1122_170617"] # ,business_hamas_2, ...
 news_docs = []
 for news_title in news_titles:
     docs = SimpleDirectoryReader(
-        input_files=[f"C:/Users/thheo/Documents/news_crawler/sample/{news_title}.txt"]
+        input_files=[f"C:/Users/thheo/Documents/news_crawler/documents/crawling_results/{news_title}.txt"]
     ).load_data()
-    docs[0].doc_id = news_title
-    news_docs.extend(docs)
+    print("docs : \n",docs)
+    # print("docs type ; ",type(docs)) # docs type : list
+    print("docs[0] : ",docs[0])
+    print("docs[0].doc_id", docs[0].doc_id)
+    # docs[0].doc_id = news_title
+    # news_docs.extend(docs)
 
-
+exit()
 # LLM
 chatgpt = OpenAI(temperature=0, model="gpt-3.5-turbo")
 service_context = ServiceContext.from_defaults(llm=chatgpt, chunk_size=624) # 1024
