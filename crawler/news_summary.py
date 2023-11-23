@@ -28,30 +28,15 @@ import hashlib
 from llama_index.schema import Document
 
 
-
 openai.api_key = os.environ["OPENAI_API_KEY"]
 logging.basicConfig(stream=sys.stdout, level=logging.WARNING)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 nest_asyncio.apply()
 
 
-
-
-# def load_news(input_directory_path) -> list:
-#     file_names = [f.split('.')[0] for f in os.listdir(input_directory_path) if f.endswith('.txt')]
-    
-#     news_docs = []
-#     for file_name in file_names:
-#         reader = SimpleDirectoryReader(input_files=[f"{input_directory_path}/{file_name}.txt"])
-#         docs = reader.load_data()
-#         docs[0].doc_id = file_name
-#         docs[0].hash = hash(reader)  # SimpleDirectoryReader 객체의 해시값을 저장
-#         news_docs.extend(docs)
-#     return news_docs
-
-
-
 def generate_news_summeries(news_docs, config=config):
+    """ 뉴스 기사의 요약 및 번역을 수행하는 함수 """
+    
     llm_predictor = LLMPredictor(
         llm= OpenAI(
             temperature = config["llm_predictor"]["temperature"],
@@ -70,12 +55,8 @@ def generate_news_summeries(news_docs, config=config):
         llm_predictor = llm_predictor,
         embed_model   = embedding,
         # node_parser   = text_parser, # 청크를 어떻게 노드로 분할할지 결정
-        # chunk_size    = 1024, # 한번에 처리할 텍스트의 최대 길이
-        
-        # prompt_helper
-        # llama_logger
-        # chunk_size_limit # 처리 가능한 최대 청크크기의 상한 선, chunk_size 보다 크거나 같아야 함.
-    )
+        # chunk_size    = 1024,        # 한번에 처리할 텍스트의 최대 길이
+        )
     response_synthesizer = TreeSummarize(
         verbose=True, 
         summary_template=SUMMARY_PROMPT
@@ -101,6 +82,8 @@ def generate_news_summeries(news_docs, config=config):
 
 
 def save_news_summary(documents, output_directory_path):
+    """ 요약 및 번역한 뉴스 기사 CSV로 저장하는 함수 """
+
     current_time = datetime.now().strftime("%Y%m%d_%H%M")
     file_name = f"{documents[0]['section']}_{documents[0]['query']}_{current_time}"
     hash_file_name = hashlib.md5(file_name.encode()).hexdigest()
@@ -121,21 +104,29 @@ def save_news_summary(documents, output_directory_path):
 
 
 
-
 def news_summarizer(news_docs):
     start_time = time.time()
-    input_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\crawling_results"
+    # input_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\crawling_results"
     output_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\summary_results"    
     
     # news_docs = load_news(input_directory_path)
     news_docs_with_summaries = generate_news_summeries(news_docs) # list
     save_news_summary(news_docs_with_summaries, output_directory_path)
 
-    end_time = time.time()  # 종료 시간 기록
-    total_time = end_time - start_time  # 총 실행 시간 계산
+    end_time = time.time()
+    total_time = end_time - start_time
     print(f"news_summarizer 실행 시간: {total_time}초")
 
 
-if __name__ == "__main__":
-    news_summarizer()
 
+# def load_news(input_directory_path) -> list:
+#     file_names = [f.split('.')[0] for f in os.listdir(input_directory_path) if f.endswith('.txt')]
+    
+#     news_docs = []
+#     for file_name in file_names:
+#         reader = SimpleDirectoryReader(input_files=[f"{input_directory_path}/{file_name}.txt"])
+#         docs = reader.load_data()
+#         docs[0].doc_id = file_name
+#         docs[0].hash = hash(reader)  # SimpleDirectoryReader 객체의 해시값을 저장
+#         news_docs.extend(docs)
+#     return news_docs
