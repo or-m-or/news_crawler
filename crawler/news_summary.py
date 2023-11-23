@@ -25,6 +25,8 @@ from crawler.constants import (
 from datetime import datetime
 import time
 import hashlib
+from llama_index.schema import Document
+
 
 
 openai.api_key = os.environ["OPENAI_API_KEY"]
@@ -32,7 +34,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.WARNING)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 nest_asyncio.apply()
 
-# 클래스로 만들기
+
 
 
 # def load_news(input_directory_path) -> list:
@@ -49,55 +51,7 @@ nest_asyncio.apply()
 
 
 
-# index 만드는거를 분리 하지말고, 요약 생성하는 기능, 파일 저장하는 기능 완전히 분리
-# service_comtext 초기화
-# def initialize_index(documents, config=config):
-#     llm_predictor = LLMPredictor(
-#         llm= OpenAI(
-#             temperature = config["llm_predictor"]["temperature"],
-#             model       = config["llm_predictor"]["model_name"],
-#         )
-#     )
-#     embedding = HuggingFaceEmbedding(
-#         model_name  = config["embed_model"]["model_name"],
-#     )
-
-#     # # 문장 단위로 분리
-#     # text_parser = SentenceSplitter(
-#     #     chunk_size=1024, # 한 청크에 포함될 수 있는 최대 문자 수
-#     #     # separator=" ",
-#     # )
-
-#     service_context = ServiceContext.from_defaults(
-#         llm_predictor = llm_predictor,
-#         embed_model   = embedding,
-#         # node_parser   = text_parser, # 청크를 어떻게 노드로 분할할지 결정
-#         # chunk_size    = 1024, # 한번에 처리할 텍스트의 최대 길이
-        
-#         # prompt_helper
-#         # llama_logger
-#         # chunk_size_limit # 처리 가능한 최대 청크크기의 상한 선, chunk_size 보다 크거나 같아야 함.
-#     )
-
-#     # response_synthesizer를 만드는 다른 방법
-#     # response_synthesizer = get_response_synthesizer(
-#     #     response_mode="compact", use_async=True
-#     # )
-#     response_synthesizer = TreeSummarize(verbose=True, summary_template=SUMMARY_PROMPT) 
-#     index = DocumentSummaryIndex.from_documents(
-#         documents,
-#         service_context=service_context,
-#         response_synthesizer=response_synthesizer,
-#         show_progress=True,
-#     )
-#     return index
-
-
-
-
-
-
-def generate_summeries(scraplist, config=config):
+def generate_news_summeries(news_docs, config=config):
     llm_predictor = LLMPredictor(
         llm= OpenAI(
             temperature = config["llm_predictor"]["temperature"],
@@ -122,77 +76,60 @@ def generate_summeries(scraplist, config=config):
         # llama_logger
         # chunk_size_limit # 처리 가능한 최대 청크크기의 상한 선, chunk_size 보다 크거나 같아야 함.
     )
-    response_synthesizer = TreeSummarize(verbose=True, summary_template=SUMMARY_PROMPT) 
+    response_synthesizer = TreeSummarize(
+        verbose=True, 
+        summary_template=SUMMARY_PROMPT
+    ) 
 
-
-    for scrapdata in scraplist:
-        docs = SimpleDirectoryReader(scrapdata)
-        print(docs)
-
-        exit()
-
-
-
+    documents = [Document(doc_id=item["doc_id"], text=item["title"]+'\n'+item["content"]) for item in news_docs]
+    
     index = DocumentSummaryIndex.from_documents(
-        scraplist,
+        documents,
         service_context=service_context,
         response_synthesizer=response_synthesizer,
         show_progress=True,
     )
 
-    for scrapdata in scraplist:
-        scrapdata.doc_id = hash(scraplist[0].title)
-        news_summary = index.get_document_summary(scrapdata.doc_id)
-        scrapdata.summary = news_summary
+    # 기사 요약
+    for item in news_docs:
+        news_summary = index.get_document_summary(item['doc_id'])
+        item["summary"] = news_summary
+        # print("news_summary :\n",news_summary)
+
+    return news_docs
     
-    return scraplist # 기존 scraplist + doc_id, news_summary
 
 
-def save_news_summary(scraplist, output_directory_path):
-    ...
-
-
-
-
-def save_summaries(documents:list, index, output_directory_path):
-    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file_name = f"{current_time}"
-    hashed_file_name = hashlib.md5(output_file_name.encode()).hexdigest()
-
-    output_file_name = f"{hashed_file_name}.csv"
+def save_news_summary(documents, output_directory_path):
+    current_time = datetime.now().strftime("%Y%m%d_%H%M")
+    file_name = f"{documents[0]['section']}_{documents[0]['query']}_{current_time}"
+    hash_file_name = hashlib.md5(file_name.encode()).hexdigest()
+    output_file_name = f"{hash_file_name}.csv"
     output_file_path = os.path.join(output_directory_path, output_file_name)
 
     with open(output_file_path, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(['doc_id','news_summary'])  # CSV 파일의 헤더
+        writer.writerow(['title', 'author', 'date', 'summary', 'content'])
 
         for doc in documents:
-            # start_time = time.time()
-            file_name = doc.doc_id
-            news_summary = index.get_document_summary(file_name)
-            writer.writerow([file_name, news_summary])
-
-            # end_time = time.time()
-            # total_time = end_time - start_time
-            # print(f"뉴스 요약 중...{index+1}/{len(documents)} - 실행 시간: {total_time}초")
-            # print(news_summary)
+            title = doc['title']
+            author = doc['author']
+            date = doc['date']
+            summary = doc['summary']
+            content = doc['content']
+            writer.writerow([title, author, date, summary, content])
 
 
 
 
-def news_summarizer(scraplist: list):
+def news_summarizer(news_docs):
     start_time = time.time()
     input_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\crawling_results"
-    output_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\summary_results"
+    output_directory_path = r"C:\Users\thheo\Documents\news_crawler\documents\summary_results"    
     
-
-    news_docs = generate_summeries(scraplist) # list
-    print(news_docs)
-        
-    exit()
-    # news_docs = load_news(input_directory_path) # return list
-    # index = initialize_index(news_docs)
-    # save_summaries(news_docs, index, output_directory_path)
+    # news_docs = load_news(input_directory_path)
+    news_docs_with_summaries = generate_news_summeries(news_docs) # list
+    save_news_summary(news_docs_with_summaries, output_directory_path)
 
     end_time = time.time()  # 종료 시간 기록
     total_time = end_time - start_time  # 총 실행 시간 계산

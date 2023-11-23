@@ -220,16 +220,16 @@ def nytimes_getnews(driver, section, query, url):
         date = date.text.strip() if date else "No date"
 
         # 결과 출력 또는 반환
+        # 'subtitle': subtitle, 추가 필요
         scrapData = {
-            'doc_id'  : '',
+            'doc_id'  : f'{section}_{query}_{title}',
             'section' : section,
-            'query'   : query, 
+            'query'   : query,
             'title'   : title,
-            'subtitle': subtitle,
             'author'  : author,
             'date'    : date,
-            'summary' : '',
             'content' : content,
+            'summary' : '',
         }
 
         # print("title : \n", title)
@@ -250,16 +250,18 @@ def crawling(news_section, news_query, news_count):
     start_time = time.time()
     driver = chrome_driver()
     login_status = nytimes_login(driver) # 로그인 상태 반환
-
-    scraplist = []
+    
     # 로그인에 성공했다면 크롤링 수행
+    scraplist = []
     if login_status:                      
         news_url_list = nytimes_newslist(driver, news_section, news_query, news_count)
         for index, news_url in enumerate(news_url_list):
             print(f'크롤링 수행 중 ...{index+1}/{len(news_url_list)}')
             scrapdata = nytimes_getnews(driver, news_section, news_query, news_url) # dic
-            # save_to_text_file(scrapdata) # 크롤링한 파일을 별도로 저장하는 함수
-            scraplist.append(scrapdata) # 크롤링한 데이터 저장
+            scraplist.append(scrapdata)
+
+            # save_to_text_file(scrapdata) # 크롤링한 파일을 별도로 저장
+            
     else:
         print("로그인에 실패하였습니다.")
 

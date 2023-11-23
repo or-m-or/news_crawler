@@ -62,7 +62,7 @@ for news_title in news_titles:
     # docs[0].doc_id = news_title
     # news_docs.extend(docs)
 
-exit()
+
 # LLM
 chatgpt = OpenAI(temperature=0, model="gpt-3.5-turbo")
 service_context = ServiceContext.from_defaults(llm=chatgpt, chunk_size=624) # 1024
