@@ -95,12 +95,14 @@ def save_news_summary(documents, output_directory_path):
         writer.writerow(['title', 'author', 'date', 'summary', 'content'])
 
         for doc in documents:
+            section = doc['section']
+            query = doc['query']
             title = doc['title']
             author = doc['author']
             date = doc['date']
             summary = doc['summary']
             content = doc['content']
-            writer.writerow([title, author, date, summary, content])
+            writer.writerow([section, query, title, author, date, summary, content])
 
 
 
