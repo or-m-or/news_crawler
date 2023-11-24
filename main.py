@@ -22,8 +22,10 @@ if __name__ == "__main__":
         # 크롤링할 뉴스의 개수 (단, news_count가 0일 때, 긁을 수 있는 모든 뉴스를 긁는다.)
         news_count = sys.argv[4]
 
+        # 수정필요 : 저장할 때 언론사 추가하기
         if news_company == 'nytimes':
             news_docs = nytimes_crawler.crawling(news_section, news_query, news_count) # list
+            exit()
             news_summary.news_summarizer(news_docs)
         # elif news_company == 'bloomberg':
         #     news_docs = bloomberg_crawler.crawling(news_section, news_query, news_count) # list

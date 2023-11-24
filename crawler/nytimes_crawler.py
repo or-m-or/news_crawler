@@ -17,9 +17,6 @@ def random_delay(min_seconds, max_seconds):
     time.sleep(random.uniform(min_seconds, max_seconds))
 
 
-
-
-
 def chrome_driver(config=config):
     """ 크롬 드라이버 객체를 생성하는 함수 """
 
