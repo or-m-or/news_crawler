@@ -94,32 +94,62 @@ def nytimes_login(driver, config=config):
         return False
 
 
-# 섹션, 쿼리(키워드), 기사 개수를 입력받고, 기사 본문이 있는 링크를 원소로 가지는 리스트 반환 (일단 하나의 섹션만 선택한다 가정)
-# 섹션을 선택해도 비즈니스만 가는이유가 뭘까 갑자기..
+# 섹션, 쿼리(키워드), 기사 개수를 입력받고, 기사 본문이 있는 링크를 원소로 가지는 리스트 반환
 def nytimes_newslist(driver, section, query, count, config=config) -> list:
     """ 크롤링 가능한 기사의 url 수집하는 함수 """
 
     articles = []
     news_url_list = []
     count = int(count)
-    driver.get(f'https://www.nytimes.com/search?dropmab=false&query={query}&sections={section}%7Cnyt%3A%2F%2Fsection%2F0415b2b0-513a-5e78-80da-21ab770cb753&sort=best')
+
+
+
+
+    # 해당 섹션 페이지 접속
+    driver.get(f'https://www.nytimes.com/section/{section}')
+    driver.find_element(By.CSS_SELECTOR, 'button[id="search-clear-button"]').click()
+    random_delay(1,2)
+    exit()
+    # .send_keys(query) # 입력 필드
+
+
+
+    # driver.get(f'https://www.nytimes.com/search?dropmab=false&query={query}&sections={section}%7Cnyt%3A%2F%2Fsection%2F0415b2b0-513a-5e78-80da-21ab770cb753&sort=best')
     random_delay(1, 2)
 
     if count == 0:
         count = float('inf')
 
-    # 원하는 개수가 나올때 까지 more button 클릭
-    while len(articles) < count: 
-        current_articles = driver.find_elements(By.CSS_SELECTOR, config['nytimes']['article_css'])
+    while len(articles) < count:
+        current_articles = driver.find_elements(By.CSS_SELECTOR, 'li[class="css-18yolpw"]')
         articles.extend(current_articles[len(articles):])
 
         if count != float('inf') and len(articles) >= count:
             break
         try:
-            driver.find_element(By.CSS_SELECTOR, config['nytimes']['article_plus_button']).click()
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         except:
-            print(f'더보기 버튼이 없음 현재 발견된 데이터만 수집, 발견 기사 : {len(articles)}개')
+            print(f'더 발견된 기사 없음. 현재 발견된 데이터만 수집, 발견 기사 : {len(articles)}개')
             break
+
+
+    # if count == 0:
+    #     count = float('inf')
+
+    # # 원하는 개수가 나올때 까지 more button 클릭
+    # while len(articles) < count: 
+    #     current_articles = driver.find_elements(By.CSS_SELECTOR, config['nytimes']['article_css'])
+    #     articles.extend(current_articles[len(articles):])
+
+    #     if count != float('inf') and len(articles) >= count:
+    #         break
+    #     try:
+    #         # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") # 아래로 스크롤
+    #         driver.find_element(By.CSS_SELECTOR, config['nytimes']['article_plus_button']).click()
+    #     except:
+    #         print(f'더 발견된 기사 없음. 현재 발견된 데이터만 수집, 발견 기사 : {len(articles)}개')
+    #         break
+
 
     # 기사 링크 주소 수집
     for article in articles:
@@ -209,6 +239,7 @@ def crawling(news_section, news_query, news_count):
     news_docs = []
     if login_status:                      
         news_url_list = nytimes_newslist(driver, news_section, news_query, news_count)
+        exit()
         for index, news_url in enumerate(news_url_list):
             print(f'크롤링 수행 중 ...{index+1}/{len(news_url_list)}')
             scrapdata = nytimes_getnews(driver, news_section, news_query, news_url) # dic
