@@ -54,7 +54,7 @@ def chrome_driver(config=config):
     headers = {
         'Accept-Language' : config['nytimes_header']['Accept-Language'],
         'Content-Type'    : config['nytimes_header']['Content-Type'],
-        'Referer'         : config['nytimes_header']['Refer'],
+        'Referer'         : config['nytimes_header']['Referer'],
     }
     
     driver.execute_cdp_cmd("Network.setExtraHTTPHeaders", {"headers": headers})
@@ -64,10 +64,10 @@ def chrome_driver(config=config):
 def nytimes_login(driver, config=config):
     """ 뉴욕타임스에 로그인을 수행하는 함수 """
 
-    # NYTIMES_EMAIL    = os.environ['NYTIMES_EMAIL']
-    # NYTIMES_PASSWORD = os.environ['NYTIMES_PASSWORD']
-    NYTIMES_EMAIL    = config['nytimes']['login_email']
-    NYTIMES_PASSWORD = config['nytimes']['login_password']
+    NYTIMES_EMAIL    = os.environ['NYTIMES_EMAIL']
+    NYTIMES_PASSWORD = os.environ['NYTIMES_PASSWORD']
+    # NYTIMES_EMAIL    = config['nytimes']['login_email']
+    # NYTIMES_PASSWORD = config['nytimes']['login_password']
 
     try:
         driver.get(config['nytimes']['account_url'])
@@ -83,23 +83,25 @@ def nytimes_login(driver, config=config):
             random_delay(1, 2) #3
 
             driver.find_element(By.NAME, 'password').send_keys(NYTIMES_PASSWORD)
-            driver.find_element(By.XPATH, config['nytimes']['login_password_input']).click()            
-            print(f"로그인 성공")
+            driver.find_element(By.XPATH, config['nytimes']['login_password_input']).click()                
+            random_delay(1, 2)
+
+            print(f"로그인 성공")            
             return True
-    
+
     except Exception as e:
         print(f'로그인 중 에러 발생: {e}')
         return False
 
 
 # 섹션, 쿼리(키워드), 기사 개수를 입력받고, 기사 본문이 있는 링크를 원소로 가지는 리스트 반환 (일단 하나의 섹션만 선택한다 가정)
+# 섹션을 선택해도 비즈니스만 가는이유가 뭘까 갑자기..
 def nytimes_newslist(driver, section, query, count, config=config) -> list:
     """ 크롤링 가능한 기사의 url 수집하는 함수 """
 
     articles = []
     news_url_list = []
     count = int(count)
-
     driver.get(f'https://www.nytimes.com/search?dropmab=false&query={query}&sections={section}%7Cnyt%3A%2F%2Fsection%2F0415b2b0-513a-5e78-80da-21ab770cb753&sort=best')
     random_delay(1, 2)
 
