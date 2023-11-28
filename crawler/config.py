@@ -18,12 +18,12 @@ config = {
     {
         'login_email'         : '',
         'login_password'      : '',
-        'account_url'         : r'https://www.nytimes.com/account',
-        'login_url'           : r'https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=acct&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Faccount',
         'login_email_input'   : '//*[@id="myAccountAuth"]/div/div/div/form/div/div[4]/button',
         'login_password_input': '//*[@id="myAccountAuth"]/div/div/form/div/div[2]/button',
-        'article_css'         : 'li[data-testid="search-bodega-result"]',
-        'article_plus_button' : 'button[data-testid="search-show-more-button"]'
+        'account_url'         : r'https://www.nytimes.com/account',
+        'login_url'           : r'https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=acct&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Faccount',
+        'article_section_url' : r'https://www.nytimes.com/section/',
+        # 'article_css'         : 'li[data-testid="search-bodega-result"]',
     },
     "nytimes_header":
     {

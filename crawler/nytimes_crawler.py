@@ -7,6 +7,7 @@ import chromedriver_autoinstaller
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import Select
 from bs4 import BeautifulSoup
 import hashlib
 from crawler.config import config
@@ -101,27 +102,23 @@ def nytimes_newslist(driver, section, query, count, config=config) -> list:
     articles = []
     news_url_list = []
     count = int(count)
-
-
-
-
-    # 해당 섹션 페이지 접속
-    driver.get(f'https://www.nytimes.com/section/{section}')
-    driver.find_element(By.CSS_SELECTOR, 'button[id="search-clear-button"]').click()
-    random_delay(1,2)
-    exit()
-    # .send_keys(query) # 입력 필드
-
-
-
-    # driver.get(f'https://www.nytimes.com/search?dropmab=false&query={query}&sections={section}%7Cnyt%3A%2F%2Fsection%2F0415b2b0-513a-5e78-80da-21ab770cb753&sort=best')
-    random_delay(1, 2)
-
+    
     if count == 0:
         count = float('inf')
 
+    # 입력 받은 섹션, 키워드에 해당되는 뉴스 목록 검색
+    driver.get(config['nytimes']['article_section_url']+section)          # 섹션 페이지 접속
+    driver.find_element(By.CSS_SELECTOR, 'span.css-6n7j50').click()       # 'search' 클릭
+    driver.find_element(By.ID, 'search-tab-input').send_keys(query)       # 키워드 입력
+    select_element = driver.find_element(By.CSS_SELECTOR, '#sort-filter') # 'newest' 선택
+    select_newest = Select(select_element)
+    select_newest.select_by_value('newest')
+    
+
+    # 수집 가능한 뉴스 개수 확인
     while len(articles) < count:
         current_articles = driver.find_elements(By.CSS_SELECTOR, 'li[class="css-18yolpw"]')
+        print(current_articles)
         articles.extend(current_articles[len(articles):])
 
         if count != float('inf') and len(articles) >= count:
@@ -132,26 +129,7 @@ def nytimes_newslist(driver, section, query, count, config=config) -> list:
             print(f'더 발견된 기사 없음. 현재 발견된 데이터만 수집, 발견 기사 : {len(articles)}개')
             break
 
-
-    # if count == 0:
-    #     count = float('inf')
-
-    # # 원하는 개수가 나올때 까지 more button 클릭
-    # while len(articles) < count: 
-    #     current_articles = driver.find_elements(By.CSS_SELECTOR, config['nytimes']['article_css'])
-    #     articles.extend(current_articles[len(articles):])
-
-    #     if count != float('inf') and len(articles) >= count:
-    #         break
-    #     try:
-    #         # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") # 아래로 스크롤
-    #         driver.find_element(By.CSS_SELECTOR, config['nytimes']['article_plus_button']).click()
-    #     except:
-    #         print(f'더 발견된 기사 없음. 현재 발견된 데이터만 수집, 발견 기사 : {len(articles)}개')
-    #         break
-
-
-    # 기사 링크 주소 수집
+    # 뉴스 URL 수집
     for article in articles:
         news_url_list.append(article.find_element(By.CSS_SELECTOR, 'a').get_attribute('href'))
 
@@ -162,7 +140,7 @@ def nytimes_newslist(driver, section, query, count, config=config) -> list:
         # count에 도달하면 종료
         if current_count >= count: break
 
-    # 결과 출력
+    # 크롤링 결과 반환
     print(f'{len(news_url_list)}개의 검색 결과를 수집하였습니다.')
     print("url list : \n",news_url_list)
     return news_url_list
@@ -180,10 +158,10 @@ def nytimes_getnews(driver, section, query, url) -> dict:
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
         
-        # 기사 제목 가져오기
+        # 뉴스 제목 가져오기
         title = soup.select_one('h1').text.strip()
 
-        # 기사 내용 가져오기
+        # 뉴스 내용 가져오기
         content = ""
         paragraphs = soup.select('article section p')
 
@@ -231,15 +209,17 @@ def nytimes_getnews(driver, section, query, url) -> dict:
 
 
 def crawling(news_section, news_query, news_count):
+    """ main """
+
     start_time = time.time()
     driver = chrome_driver()
-    login_status = nytimes_login(driver) # 로그인 상태 반환
-    
-    # 로그인에 성공했다면 크롤링 수행
+
+    # 로그인에 성공했다면 입력 받은 section, query에 해당하는 뉴스 URL을 count만큼 가져오고, 
+    # 각 URL에 접근하여 크롤링 수행
     news_docs = []
+    login_status = nytimes_login(driver) # 로그인 상태 반환
     if login_status:                      
         news_url_list = nytimes_newslist(driver, news_section, news_query, news_count)
-        exit()
         for index, news_url in enumerate(news_url_list):
             print(f'크롤링 수행 중 ...{index+1}/{len(news_url_list)}')
             scrapdata = nytimes_getnews(driver, news_section, news_query, news_url) # dic
@@ -248,15 +228,17 @@ def crawling(news_section, news_query, news_count):
         print("로그인에 실패하였습니다.")
 
     driver.quit()
-    end_time = time.time()  # 종료 시간 기록
-    total_time = end_time - start_time  # 총 실행 시간 계산
+    end_time = time.time()
+    total_time = end_time - start_time
     print(f"nytimes_crawler 실행 시간: {total_time}초")
+
     return news_docs
 
 
 
+# 주석 : 크롤링 한 뉴스기사를 .txt 파일로 저장하는 함수
 # def save_to_text_file(scrapdata):
-#     """" 크롤링 한 뉴스기사를 .txt 파일로 저장하는 함수 """
+#
 #     # results 폴더 없으면 생성
 #     documents_folder = os.path.expanduser("~/documents/news_crawler/documents")
 #     folder_name = os.path.join(documents_folder, "crawling_results")
