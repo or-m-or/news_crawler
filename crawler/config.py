@@ -23,7 +23,6 @@ config = {
         'account_url'         : r'https://www.nytimes.com/account',
         'login_url'           : r'https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=acct&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Faccount',
         'article_section_url' : r'https://www.nytimes.com/section/',
-        # 'article_css'         : 'li[data-testid="search-bodega-result"]',
     },
     "nytimes_header":
     {

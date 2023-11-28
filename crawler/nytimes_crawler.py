@@ -106,14 +106,17 @@ def nytimes_newslist(driver, section, query, count, config=config) -> list:
     if count == 0:
         count = float('inf')
 
-    # 입력 받은 섹션, 키워드에 해당되는 뉴스 목록 검색
+    # 입력 받은 섹션, 키워드에 해당되는 뉴스 목록 검색, 중간에 각 요소가 완전히 로드 될 때까지 대기시간 지정
     driver.get(config['nytimes']['article_section_url']+section)          # 섹션 페이지 접속
+    random_delay(1, 2)                                                    
     driver.find_element(By.CSS_SELECTOR, 'span.css-6n7j50').click()       # 'search' 클릭
+    random_delay(1, 2)
     driver.find_element(By.ID, 'search-tab-input').send_keys(query)       # 키워드 입력
+    random_delay(1, 2)
     select_element = driver.find_element(By.CSS_SELECTOR, '#sort-filter') # 'newest' 선택
     select_newest = Select(select_element)
     select_newest.select_by_value('newest')
-    
+    random_delay(1, 2)
 
     # 수집 가능한 뉴스 개수 확인
     while len(articles) < count:
