@@ -188,7 +188,17 @@ def nytimes_getnews(driver, section, query, url) -> dict:
 
         # 기사 작성 날짜 가져오기
         date = soup.select_one('article time')
-        date = date.text.strip() if date else "No date"
+        date = date.attrs.get('datetime') if date else "No datetime value"
+        exit()
+
+
+# YYYY-MM-DDTHH:MM:SS-05:00
+# ISO 8601 형식
+# -05:00 : UTC와의 시간차
+# datetime="2023-11-27T17:47:28-05:00"
+# datetime="2023-11-26T17:54:29-05:00"
+# datetime="2023-11-28T00:01:46-05:00"
+
 
         # 결과 출력 또는 반환
         # 'subtitle': subtitle,
@@ -202,7 +212,7 @@ def nytimes_getnews(driver, section, query, url) -> dict:
             'content' : content,
             'summary' : '',
         }
-
+        
         return scrapData
     
     except Exception as e:
