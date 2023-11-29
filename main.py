@@ -7,13 +7,13 @@ if __name__ == "__main__":
 
     if len(sys.argv) < 5:
         print("Too few arguments!")
-        print("python crawler_usage.py <news_company> <news_section> <news_query> <number-of-documents-to-crawling>")
-
+        print("터미널에 'python crawler_usage.py <언론사 명> <뉴스 섹션> <뉴스 키워드> <크롤링할 뉴스 개수>'와 같이 기입해주세요")
     else:
         # 크롤링할 뉴스의 언론사 (nytimes, bloomberg)
         news_company = sys.argv[1]
 
-        # 크롤링할 뉴스의 섹션 (Any, Arts, Books, Business, New York, Opinion, Sports, Style, U.S., World, politics, Health, Technology, Science, 등...)
+        # 크롤링할 뉴스의 섹션
+        # us, world, business, arts, lifestyle, opinion, technology, politics, business/economy, health 등 가능
         news_section = sys.argv[2]
 
         # 검색할 키워드

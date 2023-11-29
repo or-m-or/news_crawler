@@ -153,7 +153,6 @@ def nytimes_getnews(driver, section, query, url) -> dict:
     """ url list에 포함된 기사 url에 접속하여 크롤링 수행 """
 
     scrapData = {}
-
     try:
     # url 접속하여 html 소스 가져오기
         driver.get(url)
@@ -180,7 +179,6 @@ def nytimes_getnews(driver, section, query, url) -> dict:
         # subtitle = soup.select('article p')
         # subtitle = subtitles[0].get_text()
         # subtitle = subtitle.text.strip() if subtitle else "소제목 정보 없음"
-        subtitle = ''
 
         # 기사 작성자 가져오기, 못 가져오는 경우 있음.
         author = soup.select_one('article span a')
@@ -189,15 +187,14 @@ def nytimes_getnews(driver, section, query, url) -> dict:
         # 기사 작성 날짜 가져오기
         date = soup.select_one('article time')
         date = date.attrs.get('datetime') if date else "No datetime value"
-        exit()
 
 
-# YYYY-MM-DDTHH:MM:SS-05:00
-# ISO 8601 형식
-# -05:00 : UTC와의 시간차
-# datetime="2023-11-27T17:47:28-05:00"
-# datetime="2023-11-26T17:54:29-05:00"
-# datetime="2023-11-28T00:01:46-05:00"
+        # YYYY-MM-DDTHH:MM:SS-05:00
+        # ISO 8601 형식
+        # -05:00 : UTC와의 시간차
+        # datetime="2023-11-27T17:47:28-05:00"
+        # datetime="2023-11-26T17:54:29-05:00"
+        # datetime="2023-11-28T00:01:46-05:00"
 
 
         # 결과 출력 또는 반환
