@@ -132,6 +132,24 @@ def nytimes_newslist(driver, section, query, count, config=config) -> list:
             print(f'더 발견된 기사 없음. 현재 발견된 데이터만 수집, 발견 기사 : {len(articles)}개')
             break
 
+    # # 입력 받은 섹션, 키워드에 해당되는 뉴스 검색
+    # driver.get(f'https://www.nytimes.com/search?dropmab=false&query={query}&sections={section}%7Cnyt%3A%2F%2Fsection%2F70e865b6-cc70-5181-84c9-8368b3a5c34b&sort=newest
+    # driver.implicitly_wait(2) 
+    #
+    # # 수집 가능한 뉴스 확인
+    # while len(articles) < count:
+    #     current_articles = driver.find_elements(By.CSS_SELECTOR, 'li[class="css-18yolpw"]')
+    #     articles.extend(current_articles[len(articles):])
+
+    #     if count != float('inf') and len(articles) >= count:
+    #         break
+    #     try:
+    #         driver.find_element(By.CSS_SELECTOR, 'button[data-testid="search-show-more-button"]').click()
+    #     except:
+    #         print(f'더보기 버튼이 없음 현재 발견된 데이터만 수집, 발견 기사 : {len(articles)}개')
+    #         break
+
+
     # 뉴스 URL 수집
     for article in articles:
         news_url_list.append(article.find_element(By.CSS_SELECTOR, 'a').get_attribute('href'))
